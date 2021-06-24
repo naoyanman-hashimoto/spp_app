@@ -1,0 +1,33 @@
+.title-contents {
+height: 60vh;
+background-image: image-url('D1A9A014-46AD-4DF1-8526-1C0F02C9D6BC_1_105_c.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+background-position: top center;
+color: #fff;
+padding: 5vh;
+text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+.service-title {
+  font-size: 8vh;
+}
+
+.service-explain {
+  font-size: 2.5vh;
+  line-height: 40px;
+}
+
+.title{
+  font-size: 5vh;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.question_genre{
+  width: 100px;
+  text-decoration: none;
+  color: #333333;
+  text-shadow: 0 0 7px rgba(0, 0, 0, 0.9);
+  margin: 14.6vw;
+}
