@@ -1,24 +1,79 @@
 # README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
+| Column             | Type    | Options                       |
+| ------------------ | ------- | ----------------------------- |
+| nickname           | string  | null: false                   |
+| email              | string  | null: false, unique: true     |
+| encrypted_password | string  | null: false                   |
+| character_name     | string  | null: false, default: "たまご" |
+| level              | integer | null: false, default: "1"     |
+| experience_point   | integer | null: false, default: "0"     |
 
-Things you may want to cover:
+### Association
 
-* Ruby version
+- has_many :questions
+- has_many :answers
+- has_one  :scores
+- has_one  :level_setting
+- has_one  :evolution_setting
 
-* System dependencies
 
-* Configuration
+## questions テーブル
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| genre_id           | integer    | null: false                    |
+| question_name      | string     | null: false                    |
+| question_content   | string     | null: false                    |
+| tip                | string     |                                |
+| model_answer       | string     | null: false                    |
+| point              | integer    | null: false                    |
+| user               | references | null: false, foreign_key: true |
 
-* Database creation
+### Association
+- belongs_to :user
+- has_one    :answer
 
-* Database initialization
 
-* How to run the test suite
+## answers テーブル
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| user               | references | null: false, foreign_key: true |
+| question           | references | null: false, foreign_key: true |
+| answer_content     | string     | null: false                    |
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
+- belongs_to :user
+- belongs_to :question
 
-* Deployment instructions
 
-* ...
+## scores テーブル
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| user               | references | null: false, foreign_key: true |
+| answer             | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
+- belongs_to :answer
+
+
+## level_setting テーブル
+| Column             | Type    | Options      |
+| ------------------ | ------- | ------------ |
+| level              | integer | null: false  |
+| thresold           | integer | null: false  |
+
+### Association
+- belongs_to :user
+
+
+## evolution_setting テーブル
+| Column             | Type    | Options      |
+| ------------------ | ------- | ------------ |
+| level              | integer | null: false  |
+| name               | string  | null: false  |
+
+### Association
+- belongs_to :user
