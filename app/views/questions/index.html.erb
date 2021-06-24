@@ -1,0 +1,29 @@
+<%= render "shared/header" %>
+<div class = main>
+  <%# 画面上部の「人生を変える学習アプリ」の帯部分 %>
+    <div class='title-contents'>
+      <h2 class='service-title'>
+        人生を変える学習アプリ
+      </h2>
+      <p class='service-explain'>
+        SPP_APPはだれでもお勉強が好きになれる。自分でもできる自信がつく。
+      </p>
+      <p class='service-explain'>
+        そんな学習アプリです。
+      </p>
+      <p class='service-explain'>
+        さぁ、やればできる！学ぶ楽しさを体験しよう！
+      </p>
+    </div>
+  <%# 画面上部の「人生を変える学習アプリ」の帯部分 %>
+
+  <%# 課題一覧 %>
+    <div class='question_contents'>
+      <h2 class='title'>もんだいをえらんでね</h2>
+        <%= link_to 'こくご', '#', class: 'question_genre' %>
+        <%= link_to 'さんすう', '#', class: 'question_genre' %>
+        <%= link_to 'えいご', '#', class: 'question_genre' %>
+    </div>
+  <%# 課題一覧 %>
+
+</div>
