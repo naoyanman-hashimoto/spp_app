@@ -20,16 +20,34 @@
   <%# 課題一覧 %>
     <div class='question_contents'>
       <h2 class='question_title'>もんだいをえらんでね</h2>
-        <%= link_to 'こくご', '#', class: 'question_genre' %>
-        <%= link_to 'さんすう', '#', class: 'question_genre' %>
-        <%= link_to 'えいご', '#', class: 'question_genre' %>
+      <div class="main-genre">
+        <div class="japanese">
+          <%= link_to 'こくご', '#', class: 'japanese-link' %>
+        </div>
+        <div class="math">
+          <%= link_to 'さんすう', '#', class: 'math-link' %>
+        </div>
+        <div class="english">
+          <%= link_to 'えいご', '#', class: 'english-link' %>
+        </div>
+      </div>
     </div>
   <%# 課題一覧 %>
 
-<%= link_to(new_question_path, class: 'new-question-btn') do %>
-  <span class='new-question-btn-btn-text'>課題を作成する</span>
-  <%= image_tag 'sozai_cman_jp_20210625151446.png' , size: '185x50' ,class: "new-question-btn-icon" %>
-<% end %>
+  <%# 課題作成ボタン %>
+  <%= link_to(new_question_path, class: 'new-question-btn') do %>
+    <span class='new-question-btn-btn-text'>課題を作成する</span>
+    <%= image_tag 'sozai_cman_jp_20210625151446.png' , size: '185x50' ,class: "new-question-btn-icon" %>
+  <% end %>
+  <%# 課題作成ボタン %>
+
+  <%# 課題一覧表示 %>
+  <% @question.each do |question| %>
+    <%= link_to '#' do %>
+      <%= question.question_name %>
+    <% end %>
+  <% end %>
+  <%# 課題一覧表示 %>
 
 
 </div>
