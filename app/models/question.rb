@@ -13,4 +13,6 @@ class Question < ApplicationRecord
                                less_than_or_equal_to: 3000,
                                message: 'is out of setting range' }
   end
+
+  validates :genre_id, numericality: { other_than: 0 } 
 end
