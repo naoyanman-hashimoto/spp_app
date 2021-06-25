@@ -7,6 +7,11 @@
   background-color: rgb(239, 240, 220);
 }
 
+.header-title{
+  font-size: 5vh;
+  margin-bottom: 20px;
+}
+
 .nav {
   font-size: 18px;
   display: flex;
