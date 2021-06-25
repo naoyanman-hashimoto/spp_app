@@ -15,6 +15,11 @@
   padding: 0 25px;
 }
 
+.spp-app-icom{
+  text-decoration: none;
+  color: black;
+}
+
 .title_description{
   margin-right: 48vw;
 }
