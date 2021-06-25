@@ -6,8 +6,8 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :nickname
-    validates :character_name
-    validates :level
-    validates :experience_point
+    # validates :character_name
+    # validates :level
+    # validates :experience_point
   end
 end

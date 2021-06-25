@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 2021_06_24_234844) do
     t.string "nickname", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "character_name", default: "たまご", null: false
-    t.string "level", default: "1", null: false
-    t.string "experience_point", default: "0", null: false
+    t.string "character_name", default: "たまご"
+    t.integer "level", default: 1
+    t.integer "experience_point", default: 0
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
