@@ -1,6 +1,10 @@
 class QuestionsController < ApplicationController
+  before_action :select_genre, only: [:index, :genre]
+
+
   def index
-    @question = Question.all
+    @questions = Question.all
+    @results = @p.result
   end
 
   def new
@@ -16,11 +20,20 @@ class QuestionsController < ApplicationController
     end
   end
 
-end
+  def genre
+    @results = @p.result
+    genre_id = params[:q][:genre_id_eq]
+    @genre = Genre.find_by(id: genre_id)
+  end
 
+  private
 
-private
+  def question_params
+    params.require(:question).permit(:genre_id, :question_name, :question_content, :tip, :model_answer, :point).merge(user_id: current_user.id)
+  end
 
-def question_params
-  params.require(:question).permit(:genre_id, :question_name, :question_content, :tip, :model_answer, :point).merge(user_id: current_user.id)
+  def select_genre
+    @p = Question.ransack(params[:q])  # 検索オブジェクトを生成
+  end
+
 end

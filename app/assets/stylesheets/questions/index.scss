@@ -22,13 +22,26 @@ text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
   line-height: 40px;
 }
 
+.question_search{
+  font-size: 3vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.genre-select{
+  margin: 10px 0;
+}
+
+
 .question_contents{
   height: calc(100vh - 60vh - 8vh) ;
   background-color: rgb(239, 240, 220);
 }
 
 .question_title{
-  font-size: 5vh;
+  font-size: 3vh;
   display: flex;
   justify-content: center;
   margin-bottom: 20px;

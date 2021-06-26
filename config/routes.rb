@@ -3,13 +3,7 @@ Rails.application.routes.draw do
   root to: 'questions#index'
   resources :questions, only: [:index, :new, :create] do
     collection do
-      get 'japanese'
-    end
-    collection do
-      get 'math'
-    end
-    collection do
-      get 'english'
+      get 'genre'
     end
   end
 end

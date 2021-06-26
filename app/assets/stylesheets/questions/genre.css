@@ -1,0 +1,29 @@
+.genre-page{
+  margin-left: 20px;
+}
+
+.quetion-title{
+  margin-top: 10px;
+}
+
+.question-name{
+  text-decoration: none;
+  color: black;
+}
+
+.genre-tip{
+  color: rgb(119, 118, 118);
+}
+
+.root-path-link{
+  text-decoration: none;
+  color: white;
+  background-color: darkgray;
+  width: 220px;
+  height: 30px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10%;
+}
