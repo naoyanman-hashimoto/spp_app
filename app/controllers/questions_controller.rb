@@ -1,7 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :select_genre, only: [:index, :genre]
 
-
   def index
     @questions = Question.all
     @results = @p.result
@@ -29,11 +28,11 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:genre_id, :question_name, :question_content, :tip, :model_answer, :point).merge(user_id: current_user.id)
+    params.require(:question).permit(:genre_id, :question_name, :question_content, :tip, :model_answer,
+                                     :point).merge(user_id: current_user.id)
   end
 
   def select_genre
     @p = Question.ransack(params[:q])  # 検索オブジェクトを生成
   end
-
 end
