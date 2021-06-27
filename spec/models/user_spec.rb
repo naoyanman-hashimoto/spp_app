@@ -6,7 +6,6 @@ RSpec.describe User, type: :model do
     sleep 0.1
   end
   describe 'ユーザー新規登録' do
-
     context 'ユーザー新規登録できる時' do
       it '必要な情報を正しく入力すると新規登録できる' do
         expect(@user).to be_valid
@@ -62,6 +61,5 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include("Experience point can't be blank")
       end
     end
-
   end
 end
