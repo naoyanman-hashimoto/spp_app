@@ -17,19 +17,38 @@
     </div>
   <%# 画面上部の「人生を変える学習アプリ」の帯部分 %>
 
+  <%# 課題を選ぶ %>
+    <%= search_form_for @p, url: genre_questions_path do |f| %>
+      <%= f.label :genre_id_eq, 'なんのかもくにチャレンジしますか？' %>
+      <div class="genre-select" >
+        <%= f.collection_select :genre_id_eq, Genre.where.not(id: 0), :id, :name, include_blank: '---' %>
+      </div>
+      <%= f.submit 'もんだいをえらぶ' %>
+    <% end %>
+  <%# 課題を選ぶ %>
+
   <%# 課題一覧 %>
     <div class='question_contents'>
-      <h2 class='question_title'>もんだいをえらんでね</h2>
-        <%= link_to 'こくご', '#', class: 'question_genre' %>
-        <%= link_to 'さんすう', '#', class: 'question_genre' %>
-        <%= link_to 'えいご', '#', class: 'question_genre' %>
+      <h2 class='question_title'>えらべるもんだいだよ</h2>
+      <div class="main-genre">
+        <div class="japanese">
+          <%= link_to 'こくご', '#', class: 'japanese-link' %>
+        </div>
+        <div class="math">
+          <%= link_to 'さんすう', '#', class: 'math-link' %>
+        </div>
+        <div class="english">
+          <%= link_to 'えいご', '#', class: 'english-link' %>
+        </div>
+      </div>
     </div>
   <%# 課題一覧 %>
 
-<%= link_to(new_question_path, class: 'new-question-btn') do %>
-  <span class='new-question-btn-btn-text'>課題を作成する</span>
-  <%= image_tag 'sozai_cman_jp_20210625151446.png' , size: '185x50' ,class: "new-question-btn-icon" %>
-<% end %>
-
+  <%# 課題作成ボタン %>
+  <%= link_to(new_question_path, class: 'new-question-btn') do %>
+    <span class='new-question-btn-text'>課題を作成する</span>
+    <%= image_tag 'sozai_cman_jp_20210625151446.png' , size: '185x50' ,class: "new-question-btn-icon" %>
+  <% end %>
+  <%# 課題作成ボタン %>
 
 </div>

@@ -1,0 +1,29 @@
+<%= render "shared/header" %>
+<div class="genre-page">
+  <% if @p.genre_id_eq.blank?%>
+    すべてのもんだいです
+  <% else %>
+    <%= @genre.name %>のもんだいページです
+  <% end %><br>
+
+  <%# 検索結果の個数で条件分岐 %>
+  <div class="genre-list">
+    <% if @results.length !=0 %>
+      <% @results.each do |result| %>
+        <div class="quetion-title" >
+          <li class="genre-li">
+          <%= link_to result.question_name,'#',class: "question-name" %>
+          <span class="genre-tip">(ヒント：<%= result.tip %>）</span>
+          </li>
+        </div>
+      <% end %>
+    <% else %>
+      ざんねん...もんだいは、まだありません
+  <% end %>
+  </div>
+  <%# 検索結果の個数で条件分岐 %>
+
+  <div class="root-path-link">
+    <%= link_to 'トップページへ戻る', root_path ,class: "root-path-link"%>
+  </div>
+</div>
