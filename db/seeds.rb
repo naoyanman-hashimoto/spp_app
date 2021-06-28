@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(id: 1, nickname:'太郎', email: 'test@test.com', encrypted_password: '111111', character_name: 'たまご', level: '1', experience_point: '0' )
 Question.create(id: 1, genre_id:'2', question_name:'あわせていくつ？', question_content: '○○  ○○○ あわせていくつかな？',tip: 'まるをかぞえてみよう', model_answer: '5つ', point: '50', user_id: '1' )
 Question.create(id: 2, genre_id:'2', question_name:'あわせていくつ？', question_content: '☆  ☆☆☆☆ あわせていくつかな？',tip: 'ほしをかぞえてみよう', model_answer: '5つ', point: '50', user_id: '1' )
 Question.create(id: 3, genre_id:'2', question_name:'ぜんぶでなんほん?', question_content: 'しろいおはなが6ほん、あおいおはなが2ほん。ぜんぶでなんほん？',tip: '⑥と②を合わせると・・・', model_answer: '8ほん', point: '100', user_id: '1' )
