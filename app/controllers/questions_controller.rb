@@ -3,7 +3,6 @@ class QuestionsController < ApplicationController
   before_action :select_genre, only: [:index, :genre]
 
   def index
-    @questions = Question.all
     @results = @p.result
   end
 
@@ -24,6 +23,9 @@ class QuestionsController < ApplicationController
     @results = @p.result
     genre_id = params[:q][:genre_id_eq]
     @genre = Genre.find_by(id: genre_id)
+    # @question = Question.find_by(params[:id])
+    @questions = Question.all
+    @question = Question.find_by(params[:question_id])
   end
 
   private
