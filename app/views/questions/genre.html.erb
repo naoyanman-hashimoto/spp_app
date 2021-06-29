@@ -12,8 +12,9 @@
       <% @results.each do |result| %>
         <div class="quetion-title" >
           <li class="genre-li">
-          <%= link_to result.question_name,'#',class: "question-name" %>
+          <%= link_to result.question_name,'#',class: "question-name" %><br>
           <span class="genre-tip">(ヒント：<%= result.tip %>）</span>
+          <span class="genre-user"> ✨ 出題者：<%= result.user.nickname %></span>
           </li>
         </div>
       <% end %>
