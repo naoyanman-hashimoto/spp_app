@@ -1,0 +1,35 @@
+<%= render "shared/header" %>
+<div class="answer-new">
+  <div class="left-answer-new">
+    <h2 class= qustion-name>
+      【No.<%= @question.id %>】 <%= @question.question_name %>
+    </h2>
+    <div class="question-content">
+      【もんだい】<%= @question.question_content %>
+    </div>
+    <div class="question-tip">
+      【ヒント】<%= @question.tip %>
+    </div>
+    <div class="answer-content">
+      <%= form_with model: [@question, @answer],local: true do |f| %>
+        <div class="answer-title" >
+        <span>【かいとう】</span>
+        </div>
+        <%= f.text_area :answer_content, class:"answer-text", placeholder:"こたえをにゅうりょくしてください" %>
+        <%= render 'shared/error_messages', model: f.object %>
+        <div class="answer-btn-content">
+          <%= f.submit "こたえる" ,class:"answer-btn" %>
+        </div>
+        <%=link_to 'あきらめる', root_path, class:"back-btn" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="center-answer-new">
+    <div class="set-timer" id="set-timer">
+      <span id='minit'></span>
+      <span id='seconds'></span>
+    </div>
+  </div>
+  <div class="raight-answer-new">
+  </div>
+</div>

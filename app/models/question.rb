@@ -5,6 +5,7 @@ class Question < ApplicationRecord
   belongs_to :genre
 
   belongs_to :user
+  has_one :answer
 # アソシエーション関係
 # バリデーションの設定
   FORBIDDEN_CHARACTERS_REGEX = /[死殺]/

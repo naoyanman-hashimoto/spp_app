@@ -4,6 +4,7 @@
 
 .quetion-title{
   margin-top: 10px;
+  /* list-style: none; */
 }
 
 .question-name{
@@ -12,6 +13,11 @@
 }
 
 .genre-tip{
+  color: rgb(119, 118, 118);
+  margin-left: 20px;
+}
+
+.genre-user{
   color: rgb(119, 118, 118);
 }
 
