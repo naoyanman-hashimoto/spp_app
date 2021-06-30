@@ -4,7 +4,7 @@
 }
 
 .left-answer-new{
-  margin: 20px 0 0 20px;
+  margin: 50px 0 0 20px;
   width: 30vw;
 }
 
@@ -30,7 +30,7 @@
 .answer-text{
   width: 30vw;
   height: 15vh;
-  margin-bottom: 15px;
+  margin: 10px 0 15px 0;
 }
 
 .answer-btn{
@@ -51,7 +51,7 @@
 
 .set-timer{
   font-size: 20px;
-  width: 200px;
+  width: 400px;
   height: 50px;
   /* background-image: linear-gradient(40deg, #fce043 0%, #fb7ba2 74%); */
   display: flex;
