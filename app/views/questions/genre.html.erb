@@ -17,7 +17,7 @@
           <% if user_signed_in? %>
             <% if current_user.id == result.user_id %>
               <span class="show-lists hidden" , id="lists">◇
-                <%= link_to "編集", "#", metod: :get,    class:"question-link" %>
+                <%= link_to "編集", edit_question_path(result.id), metod: :get,    class:"question-link" %>
                 <%= link_to "削除", "#", metod: :delete, class:"question-link" %>
               </span>
             <% end %>

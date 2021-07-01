@@ -1,0 +1,37 @@
+<%= render "shared/header" %>
+<div class='new-question-main'>
+  <h1>出題ページです</h1>
+  <%= form_with model: @question,local: true do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+    <div class="question-form">
+      ジャンルを選択してください<span class="indispensable">必須</span>
+      <div class="question-jenre">
+        <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
+      </div>
+      課題名を決めてください<span class="indispensable">必須</span>
+      <div class="question-name">
+        <%= f.text_field :question_name, class:"question-text", placeholder:"例) 簡単な足し算" %>
+      </div>
+      課題内容を入力してください<span class="indispensable">必須</span>
+      <div class="question-content">
+        <%= f.text_area :question_content, class:"question-text-area", placeholder:"例)10+5" %>
+      </div>
+      ヒントがあれば入力してください（任意)
+      <div class="question-tip">
+        <%= f.text_area :tip, class:"question-text-area", placeholder:"例)１の位と１０の位に注意してみよう" %>
+      </div>
+      模範解答を入力してください<span class="indispensable">必須</span>
+      <div class="question-model-answer">
+        <%= f.text_area :model_answer, class:"question-text-area", placeholder:"例)15" %>
+      </div>
+      獲得できる経験値量を入力してください<span class="indispensable">必須</span>
+      <div class="question-point">
+        <%= f.text_field :point, class:"question-text", placeholder:"例)300" %>
+      </div>
+      <div class="question-submit">
+        <%= f.submit "変更する" ,class:"question-btn" %>
+      </div>
+        <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+  <% end %>
+</div>
