@@ -1,7 +1,8 @@
 class QuestionsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :select_genre, only: [:index, :genre]
-  before_action :move_to_index, except: [:index, :genre, :new, :create ]
+  before_action :set_question, only: [:edit, :update, :destroy]
+  before_action :move_to_index, except: [:index, :genre, :new, :create, :destroy ]
 
   def index
     @results = @p.result
@@ -28,15 +29,19 @@ class QuestionsController < ApplicationController
   end
 
   def edit
-    @question = Question.find(params[:id])
   end
 
   def update
-    @question = Question.find(params[:id])
     if @question.update(question_params)
       redirect_to root_path
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @question.destroy
+      redirect_to root_path
     end
   end
 
@@ -56,6 +61,10 @@ class QuestionsController < ApplicationController
     unless current_user.id == question.user_id
       redirect_to action: :index
     end
+  end
+
+  def set_question
+    @question = Question.find(params[:id])
   end
 
 end
