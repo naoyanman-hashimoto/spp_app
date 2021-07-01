@@ -12,7 +12,18 @@
       <% @results.each do |result| %>
         <div class="quetion-title" >
           <li class="genre-li">
-          <%= link_to result.question_name, new_question_answer_path(question_id: result.id ) ,class: "question-name" %><br>
+          <%= link_to result.question_name, new_question_answer_path(question_id: result.id ) ,class: "question-name", id: "button" %>
+
+          <% if user_signed_in? %>
+            <% if current_user.id == result.user_id %>
+              <span class="show-lists hidden" , id="lists">◇
+                <%= link_to "編集", edit_question_path(result.id), metod: :get,    class:"question-link" %>
+                <%= link_to "削除", "#", metod: :delete, class:"question-link" %>
+              </span>
+            <% end %>
+          <% end %>
+
+          <br>
           <span class="genre-tip">(ヒント：<%= result.tip %>）</span>
           <span class="genre-user"> ✨ 出題者：<%= result.user.nickname %></span>
           </li>

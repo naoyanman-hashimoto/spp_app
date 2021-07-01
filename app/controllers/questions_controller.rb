@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   before_action :select_genre, only: [:index, :genre]
+  before_action :move_to_index, except: [:index, :genre, :new, :create ]
 
   def index
     @results = @p.result
@@ -26,6 +27,19 @@ class QuestionsController < ApplicationController
     @question = Question.find_by(params[:question_id])
   end
 
+  def edit
+    @question = Question.find(params[:id])
+  end
+
+  def update
+    @question = Question.find(params[:id])
+    if @question.update(question_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   def question_params
@@ -36,4 +50,12 @@ class QuestionsController < ApplicationController
   def select_genre
     @p = Question.ransack(params[:q])  # 検索オブジェクトを生成
   end
+
+  def move_to_index
+    question = Question.find(params[:id])
+    unless current_user.id == question.user_id
+      redirect_to action: :index
+    end
+  end
+
 end
