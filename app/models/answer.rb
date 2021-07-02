@@ -1,6 +1,7 @@
 class Answer < ApplicationRecord
   belongs_to :user
   belongs_to :question
+  has_one    :score
 
   FORBIDDEN_CHARACTERS_REGEX = /[死殺]/
 
