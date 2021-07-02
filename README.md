@@ -15,7 +15,7 @@
 
 - has_many :questions
 - has_many :answers
-- has_one  :scores
+- has_many :scores
 - has_one  :level_setting
 - has_one  :evolution_setting
 
@@ -33,7 +33,7 @@
 
 ### Association
 - belongs_to :user
-- has_one    :answer
+- has_many   :answers
 
 
 ## answers テーブル
@@ -46,13 +46,15 @@
 ### Association
 - belongs_to :user
 - belongs_to :question
+- has_one    :score
 
 
 ## scores テーブル
-| Column             | Type       | Options                        |
-| ------------------ | ---------- | ------------------------------ |
-| user               | references | null: false, foreign_key: true |
-| answer             | references | null: false, foreign_key: true |
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| user     | references | null: false, foreign_key: true |
+| answer   | references | null: false, foreign_key: true |
+| score    | integer    | null: false                    |
 
 ### Association
 - belongs_to :user
@@ -73,7 +75,7 @@
 | Column             | Type    | Options      |
 | ------------------ | ------- | ------------ |
 | level              | integer | null: false  |
-| name               | string  | null: false  |
+| character_name     | string  | null: false  |
 
 ### Association
 - belongs_to :user
