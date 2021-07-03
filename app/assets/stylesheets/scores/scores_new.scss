@@ -1,0 +1,85 @@
+// Place all the styles related to the scores controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.judge-criteria{
+  color: rgb(119, 118, 118);
+  border: 0.5rem outset lightskyblue;
+  border-radius: 12px;
+  font: bold 1rem sans-serif;
+  padding: 1rem;
+}
+
+
+.answer-vs-model-answer{
+  width: 100vw;
+  // height: 200px;
+  display: flex;
+}
+
+.users-answer-field{
+  width: 50vw;
+  height: 200px;
+  border: 1px dashed rgb(129, 129, 129);
+  margin: 15px 20px;
+  background-color: rgb(241, 241, 241);
+}
+
+.model-answer-field{
+  width: 50vw;
+  height: 200px;
+  border: 1px dashed rgb(129, 129, 129);
+  margin: 15px 20px;
+  background-color: rgb(226, 226, 226);
+}
+
+.answer-field{
+  margin: 10px 0 10px 10px;
+}
+
+.users-answer-content{
+  margin: 10px 0 10px 10px;
+  font-size: 30px;
+}
+
+.model-answer-content{
+  margin: 10px 0 10px 10px;
+  font-size: 30px;
+}
+
+.scoring-field{
+  display: flex;
+  justify-content: center;
+}
+
+.score-judge{
+  width: 6vw;
+  height: 40px;
+  margin: 15px 0 0 8.2vw;
+}
+
+.score-judge-submit{
+  margin: 25px 0 0 4vw;
+
+}
+
+.judge {
+  font-size: 1.5rem;
+  animation: fuwafuwa 3s infinite ease-in-out .8s alternate;
+  transition: 1.5s ease-in-out;
+  width: 150px;
+  height: 70px;
+  margin-top: 15px;
+}
+ 
+@keyframes fuwafuwa {
+  0% {
+    transform:translate(0, 0) rotate(-7deg);
+  }
+  50% {
+    transform:translate(0, -7px) rotate(0deg);
+  }
+  100% {
+    transform:translate(0, 0) rotate(7deg);
+  }
+}

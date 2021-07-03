@@ -12,7 +12,7 @@
       <% @results.each do |result| %>
         <div class="quetion-title" >
           <li class="genre-li">
-          <%= link_to result.question_name, new_question_answer_path(question_id: result.id ) ,class: "question-name", id: "button" %>
+          <%= link_to result.question_name, new_question_answer_path(question_id: result.id ) ,class: "genre-question-name", id: "button" %>
 
           <% if user_signed_in? %>
             <% if current_user.id == result.user_id %>
