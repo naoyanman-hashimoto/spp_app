@@ -1,0 +1,66 @@
+<%= render "shared/header" %>
+<div class="scoring-page">
+  <div class="answer-new">
+    <div class="left-answer-new">
+      <h2 class= question-name>
+        【No.<%= @question.id %>】 <%= @question.question_name %>
+      </h2>
+      <div class="question-content">
+        【もんだい】<%= @question.question_content %>
+      </div>
+      <div class="question-tip">
+        【ヒント】<%= @question.tip %>
+      </div>
+    </div>
+
+    <div class="center-answer-new">
+      <% if @answer.answer_content == @question.model_answer %>
+        <div class="judge" >大正解！！</div>
+      <% else %>
+        <div class="judge" >ざんねん...</div>
+      <% end %>
+    </div>
+    
+    <div class="right-answer-new">
+      <div class="judge-criteria">
+        判定基準：
+        <div>かんぜんせいかい：10てん</div>
+        <div>はんぶんせいかい：5てん</div>
+        <div>ハズレ：0てん</div>
+        <div>※むずかしいときは、おうちの人にきいてね！</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="answer-vs-model-answer">
+    <div class="users-answer-field">
+      <span class="answer-field">あなたのかいとう</span>
+      <div class="users-answer-content">
+        <%= @answer.answer_content %>
+      </div>
+    </div>
+    <div class="model-answer-field">
+      <span class="answer-field">こたえ</span>
+      <div class="model-answer-content">
+        <%= @question.model_answer %>
+      </div>
+    </div>
+  </div>
+
+  <div class="scoring-field">
+    <%= form_with model: [@question, @answer, @score],local: true do |f| %>
+      <div class="judge-message">
+        <span>↓↓↓てんすうをにゅうりょくしてね↓↓↓</span>
+      </div>
+      <div class="judge-field">
+        <div class="judge-input">
+          <%= f.number_field :score, class:"score-judge", placeholder:"てんすう",min: 0, max: 10 %><span>てん</span>
+        </div>
+        <div class="score-judge-submit">
+          <%= f.submit "こたえあわせをかんりょうする", class:"score-judge-submit-btn" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>

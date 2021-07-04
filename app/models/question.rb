@@ -5,7 +5,7 @@ class Question < ApplicationRecord
   belongs_to :genre
 
   belongs_to :user
-  has_one :answer
+  has_many :answers
 # アソシエーション関係
 # バリデーションの設定
   FORBIDDEN_CHARACTERS_REGEX = /[死殺]/
@@ -13,6 +13,7 @@ class Question < ApplicationRecord
   validates :genre_id, numericality: { other_than: 0, message: "can't be blank" }
 
   with_options presence: true do
+    validates :user
     validates :question_name,
               format: { without: FORBIDDEN_CHARACTERS_REGEX, message: 'is invalid. Contains inappropriate content' }
     validates :question_content, uniqueness: { case_sensitive: true } ,

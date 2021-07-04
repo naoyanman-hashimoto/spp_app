@@ -1,0 +1,10 @@
+<%= render "shared/header" %>
+<div class="score-index-page">
+  <div class="score-index-title">
+  おつかれさまでした！<br>
+  いいね👍<br>
+  さっそく、こたえあわせをしてみよう^^<br>
+  せいかいすると、けいけんちがもらえるよ✨
+  </div>
+  <%= link_to 'こたえあわせをする', new_question_answer_score_path(@question.id,@answer.id) ,class: "check-the-answer" %>
+</div>

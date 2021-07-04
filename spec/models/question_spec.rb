@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe Question, type: :model do
   describe '#create' do
     before do
-      @question = FactoryBot.build(:question)
+      user = FactoryBot.create(:user)
+      @question = FactoryBot.build(:question, user_id: user.id)
       sleep 0.1
     end
     describe '課題作成機能' do
@@ -113,6 +114,11 @@ RSpec.describe Question, type: :model do
           @question.genre_id = 0
           @question.valid?
           expect(@question.errors.full_messages).to include("Genre can't be blank")
+        end
+        it 'user_idが空では保存できないこと' do
+          @question.user_id = nil
+          @question.valid?
+          expect(@question.errors.full_messages).to include("User can't be blank")
         end
       end
     end

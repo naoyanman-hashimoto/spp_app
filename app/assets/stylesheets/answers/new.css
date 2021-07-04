@@ -1,14 +1,13 @@
 .answer-new{
   display: flex;
-  /* background-image: linear-gradient(40deg, #43a9fc 0%, #fb7ba2 74%); */
+  justify-content: space-between;
 }
 
 .left-answer-new{
   margin: 50px 0 0 20px;
-  width: 30vw;
 }
 
-.qustion-name{
+.question-name{
   font-size: 25px;
   margin-bottom: 15px;
 }
@@ -41,19 +40,22 @@
 
 .center-answer-new{
   margin: 20px 20px 0 20px;
-  width: 30vw;
+  display: flex;
+  justify-content: center;
 }
 
-.raight-answer-new{
+.right-answer-new{
   margin: 20px 20px 0 0;
-  width: 30vw;
+  display: flex;
+  align-items: center;
 }
 
 .set-timer{
   font-size: 20px;
   width: 400px;
   height: 50px;
-  /* background-image: linear-gradient(40deg, #fce043 0%, #fb7ba2 74%); */
+  border: dashed 1px gray;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;

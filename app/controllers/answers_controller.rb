@@ -11,7 +11,7 @@ class AnswersController < ApplicationController
     @answer = Answer.new(answer_params)
     if @answer.valid?
       @answer.save
-      redirect_to root_path
+      redirect_to question_answer_scores_path(@question.id,@answer.id)
     else
       render :new
     end

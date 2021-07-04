@@ -2,12 +2,12 @@
   margin-left: 20px;
 }
 
-.quetion-title{
+.question-title{
   margin-top: 10px;
   list-style-type: circle;
 }
 
-.question-name{
+.genre-question-name{
   text-decoration: none;
   color: black;
   border-bottom: dashed 1px rgb(165, 165, 165);
@@ -16,7 +16,6 @@
 .question-link{
   color: rgb(117, 117, 117);
   text-decoration: none;
-  /* display: none; */
   display: inline-block;
 }
 
@@ -38,7 +37,7 @@
   background-color: darkgray;
   width: 220px;
   height: 30px;
-  margin-top: 10px;
+  margin: 10px  0;
   display: flex;
   justify-content: center;
   align-items: center;
