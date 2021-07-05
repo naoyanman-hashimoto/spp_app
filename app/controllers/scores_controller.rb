@@ -38,9 +38,10 @@ class ScoresController < ApplicationController
         user.update(level: user.level)
       end
 
-      evolutionSetting = EvolutionSetting.find_by(level: user.level );
-      if evolutionSetting.level <= user.level
-        user.update(character_name: evolutionSetting.character_name)
+      if  evolutionSetting = EvolutionSetting.find_by(level: user.level );
+        if evolutionSetting.level <= user.level
+          user.update(character_name: evolutionSetting.character_name)
+        end
       end
 
       redirect_to root_path
