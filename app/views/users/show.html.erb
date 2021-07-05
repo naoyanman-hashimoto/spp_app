@@ -1,0 +1,40 @@
+<%= render "shared/header" %>
+
+<div class="my-page">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= "#{@user.nickname}さんのマイページ" %>
+      </h2>
+
+      <%# プロフィール部分 %>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">なまえ</th>
+            <td class="table__col2"><%= @user.nickname %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">レベル</th>
+            <td class="table__col2"><%= @user.level %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">キャラクター</th>
+            <td class="table__col2"><%= @user.character_name %></td>
+          </tr>
+        </tbody>
+      </table>
+      <%# プロフィール部分 %>
+
+      <%# 解答履歴を表示 %>
+      <h2 class="page-heading">
+        <%= "#{@user.nickname}さんの こたえてきたもんだいたち" %>
+      </h2>
+      <div class="user__card">
+        <%= render partial: '/users/answer', collection: @answers %>
+      </div>
+      <%# 解答履歴を表示 %>
+
+    </div>
+  </div>
+</div>

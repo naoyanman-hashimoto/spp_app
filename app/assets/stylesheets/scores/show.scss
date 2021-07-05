@@ -1,0 +1,59 @@
+// マイページ
+.my-page{
+  margin: 20px;
+}
+
+.page-heading{
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.table{
+  border-collapse: collapse;
+  margin-bottom: 32px;
+}
+
+.table__col1{
+  text-align: left;
+  font-weight: bold;
+  background: #fafafa;
+  border-collapse: collapse;
+  border: 1px solid darkgray;
+  width: 30%;
+  padding: 8px;
+}
+.table__col2{
+  text-align: left;
+  border: 1px solid darkgray;
+  background: white;
+  // width: 70%;
+  padding: 16px 12px;
+}
+.my-page-score{
+  margin-bottom: 5px;
+}
+.user-answer-link{
+  text-decoration: none;
+  color: black;
+  margin-right: 15px;
+}
+.user-answer-score{
+  color: gray;
+}
+
+
+// 採点結果アニメーション
+.judge-history{
+  font-size: 30px;
+  color: gray;
+  text-shadow:  0 0 15px rgb(151, 149, 10);
+  margin-top: 20px;
+  border-bottom: 3px double darkgray;
+  animation:5s linear infinite rotationY;
+}
+
+@keyframes rotationY{
+  0%{ transform:rotateY(0);}
+  100%{ transform:rotateY(360deg); }
+}
+// 採点結果アニメーション
