@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :questions
   has_many :answers
   has_many :scores
+  has_one  :levelsetting
 
   with_options presence: true do
     validates :nickname
