@@ -19,6 +19,32 @@ class ScoresController < ApplicationController
     end
   end
 
+  def create
+    user = current_user
+    @score = Score.new(score_params)
+    if @score.valid?
+      @score.save
+
+      totalExp = user.experience_point
+      point = @question.point * @score.score / 10
+      totalExp += point
+
+      user.experience_point = totalExp
+      user.update(experience_point: totalExp)
+    
+      levelSetting = LevelSetting.find_by(level: user.level + 1);
+    
+      if levelSetting.thresold <= user.experience_point
+        user.level = user.level + 1
+        user.update(level: user.level)
+      end
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
+
   def show
     @score = Score.find(params[:id])
   end
@@ -26,6 +52,8 @@ class ScoresController < ApplicationController
   private
 
   def set_question_answer
+    # user = User.find(params[:user_id])
+    # user = current_user
     @question = Question.find(params[:question_id])
     @answer   = Answer.find(params[:answer_id])
   end

@@ -3,6 +3,14 @@ users = []
   users << User.new(nickname: "dummy-#{i+1}", email: "test#{i+1}@test.com", password: '111111', character_name: 'たまご', level: 1, experience_point: 0 )
 end
 User.import users
+
+levels = []
+100.times do |l|
+  level =+ l+1
+  levels << LevelSetting.new(level: l+1, thresold: level**3)
+end
+LevelSetting.import levels
+
 Question.create(id: 1, genre_id:'2', question_name:'あわせていくつ？', question_content: '○○  ○○○ あわせていくつかな？',tip: 'まるをかぞえてみよう', model_answer: '5つ', point: '50', user_id: '5' )
 Question.create(id: 2, genre_id:'2', question_name:'あわせていくつ？', question_content: '☆  ☆☆☆☆ あわせていくつかな？',tip: 'ほしをかぞえてみよう', model_answer: '5つ', point: '50', user_id: '5' )
 Question.create(id: 3, genre_id:'2', question_name:'ぜんぶでなんほん?', question_content: 'しろいおはなが6ほん、あおいおはなが2ほん。ぜんぶでなんほん？',tip: '⑥と②を合わせると・・・', model_answer: '8ほん', point: '100', user_id: '5' )
