@@ -16,7 +16,6 @@
 - has_many :questions
 - has_many :answers
 - has_many :scores
-- has_one  :evolution_setting
 
 
 ## questions テーブル
@@ -76,4 +75,3 @@
 | character_name     | string  | null: false  |
 
 ### Association
-- belongs_to :user

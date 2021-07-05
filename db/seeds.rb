@@ -11,6 +11,15 @@ levels = []
 end
 LevelSetting.import levels
 
+EvolutionSetting.create(id:1, level:5,  character_name:'ようちゅう')
+EvolutionSetting.create(id:2, level:15, character_name:'サナギ')
+EvolutionSetting.create(id:3, level:30, character_name:'カブトムシ')
+EvolutionSetting.create(id:4, level:40, character_name:'エレファスゾウカブト')
+EvolutionSetting.create(id:5, level:50, character_name:'アトラスオオカブト')
+EvolutionSetting.create(id:6, level:60, character_name:'ネプチューンオオカブト')
+EvolutionSetting.create(id:7, level:70, character_name:'コーカサスオオカブト')
+EvolutionSetting.create(id:8, level:85, character_name:'ヘラクレスオオカブト')
+
 Question.create(id: 1, genre_id:'2', question_name:'あわせていくつ？', question_content: '○○  ○○○ あわせていくつかな？',tip: 'まるをかぞえてみよう', model_answer: '5つ', point: '50', user_id: '5' )
 Question.create(id: 2, genre_id:'2', question_name:'あわせていくつ？', question_content: '☆  ☆☆☆☆ あわせていくつかな？',tip: 'ほしをかぞえてみよう', model_answer: '5つ', point: '50', user_id: '5' )
 Question.create(id: 3, genre_id:'2', question_name:'ぜんぶでなんほん?', question_content: 'しろいおはなが6ほん、あおいおはなが2ほん。ぜんぶでなんほん？',tip: '⑥と②を合わせると・・・', model_answer: '8ほん', point: '100', user_id: '5' )

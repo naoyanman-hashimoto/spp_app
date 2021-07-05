@@ -33,11 +33,17 @@ class ScoresController < ApplicationController
       user.update(experience_point: totalExp)
     
       levelSetting = LevelSetting.find_by(level: user.level + 1);
-    
       if levelSetting.thresold <= user.experience_point
         user.level = user.level + 1
         user.update(level: user.level)
       end
+
+      if  evolutionSetting = EvolutionSetting.find_by(level: user.level );
+        if evolutionSetting.level <= user.level
+          user.update(character_name: evolutionSetting.character_name)
+        end
+      end
+
       redirect_to root_path
     else
       render :new
@@ -52,8 +58,6 @@ class ScoresController < ApplicationController
   private
 
   def set_question_answer
-    # user = User.find(params[:user_id])
-    # user = current_user
     @question = Question.find(params[:question_id])
     @answer   = Answer.find(params[:answer_id])
   end
