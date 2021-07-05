@@ -16,7 +16,6 @@
 - has_many :questions
 - has_many :answers
 - has_many :scores
-- has_one  :level_setting
 - has_one  :evolution_setting
 
 
@@ -68,7 +67,6 @@
 | thresold           | integer | null: false  |
 
 ### Association
-- belongs_to :user
 
 
 ## evolution_setting テーブル
