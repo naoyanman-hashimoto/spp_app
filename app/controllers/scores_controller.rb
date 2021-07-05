@@ -1,6 +1,6 @@
 class ScoresController < ApplicationController
   before_action :authenticate_user!, only: [:index, :new, :create]
-  before_action :set_question_answer, only: [:index, :new, :create]
+  before_action :set_question_answer, only: [:index, :new, :create, :show]
 
   def index
   end
@@ -17,6 +17,10 @@ class ScoresController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @score = Score.find(params[:id])
   end
 
   private

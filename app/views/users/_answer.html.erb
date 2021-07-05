@@ -1,0 +1,12 @@
+<div class="my-page-score">
+  <span class="answer-question-id">
+    <%= "【#{answer.question.genre.name}"%>
+    <%= " No.#{answer.question.id}】"%>
+  </span>
+  <span>
+    <%= link_to answer.question.question_name, question_answer_score_path(answer.question.id,answer.id,answer.score.id), class:"user-answer-link" %>
+  </span>
+  <span class="user-answer-score">
+    <%= "#{answer.score.score}てん"%>
+  </span>
+</div>
