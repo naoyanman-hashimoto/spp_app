@@ -3,6 +3,11 @@
   margin: 20px;
 }
 
+.user__wrapper{
+  display: flex;
+  align-items: flex-end;
+}
+
 .page-heading{
   margin-bottom: 15px;
   font-size: 1.2rem;
@@ -11,6 +16,7 @@
 .table{
   border-collapse: collapse;
   margin-bottom: 32px;
+  width: 30%;
 }
 
 .table__col1{
@@ -26,9 +32,18 @@
   text-align: left;
   border: 1px solid darkgray;
   background: white;
-  // width: 70%;
+  width: 70%;
   padding: 16px 12px;
 }
+.point-parameter{
+  margin-bottom: 32px;
+  padding: 8px 12px;
+  width: 20%;
+  height: 115px;
+}
+
+
+
 .my-page-score{
   margin-bottom: 5px;
 }

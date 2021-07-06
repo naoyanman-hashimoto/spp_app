@@ -2,11 +2,11 @@
 
 <div class="my-page">
   <div class="inner">
-    <div class="user__wrapper">
-      <h2 class="page-heading">
-        <%= "#{@user.nickname}さんのマイページ" %>
-      </h2>
+    <h2 class="page-heading">
+      <%= "#{@user.nickname}さんのマイページ" %>
+    </h2>
 
+    <div class="user__wrapper">
       <%# プロフィール部分 %>
       <table class="table">
         <tbody>
@@ -25,6 +25,23 @@
         </tbody>
       </table>
       <%# プロフィール部分 %>
+      <div class="point-parameter">
+        <div class="users-point">
+          <span>
+            <%= "レベル#{@user.level+1}まで" %>
+          </span>
+          <div>
+            <%= "#{@levelSetting.thresold}ポイントひつよう" %>
+          </div>
+          <div>
+            <%= "げんざい#{@user.experience_point}ポイント" %>
+          </div>
+          <div>
+            <%= "あと#{@levelSetting.thresold - @user.experience_point}ポイント！！" %>
+          </div>
+        </div>
+      </div>
+    </div>
 
       <%# 解答履歴を表示 %>
       <h2 class="page-heading">
@@ -35,6 +52,5 @@
       </div>
       <%# 解答履歴を表示 %>
 
-    </div>
   </div>
 </div>
