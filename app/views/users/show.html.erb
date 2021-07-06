@@ -2,10 +2,11 @@
 
 <div class="my-page">
   <div class="inner">
+    <%# マイページヘッダー２部分 %>
     <h2 class="page-heading">
       <%= "#{@user.nickname}さんのマイページ" %>
     </h2>
-
+    <%# マイページヘッダー２部分 %>
     <div class="user__wrapper">
       <%# プロフィール部分 %>
       <table class="table">
@@ -25,14 +26,17 @@
         </tbody>
       </table>
       <%# プロフィール部分 %>
+      <%# 経験値グラフ部分 %>
       <div class="point-parameter">
         <div class="users-point">
-          <span>
-            <%= "レベル#{@user.level+1}まで" %>
-          </span>
           <div>
+            <%= "レベル#{@user.level+1}まで" %>
+          </div>
+          <div class="necessary-point" id="necessary-point">
             <%= "#{@levelSetting.thresold}ポイントひつよう" %>
           </div>
+          <canvas class="myChart" id="myChart"  width="600" height="140"></canvas>
+          <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
           <div>
             <%= "げんざい#{@user.experience_point}ポイント" %>
           </div>
@@ -42,7 +46,7 @@
         </div>
       </div>
     </div>
-
+    <%# 経験値グラフ部分 %>
       <%# 解答履歴を表示 %>
       <h2 class="page-heading">
         <%= "#{@user.nickname}さんの こたえてきたもんだいたち" %>
@@ -51,6 +55,5 @@
         <%= render partial: '/users/answer', collection: @answers %>
       </div>
       <%# 解答履歴を表示 %>
-
   </div>
 </div>
