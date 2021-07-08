@@ -18,32 +18,26 @@
   <%# 画面上部の「人生を変える学習アプリ」の帯部分 %>
 
   <%# 課題を選ぶ %>
+  <div class="genre-select-field" >
     <%= search_form_for @p, url: genre_questions_path do |f| %>
-      <%= f.label :genre_id_eq, 'なんのかもくにチャレンジしますか？' %>
-      <div class="genre-select" >
+      <%= f.label :genre_id_eq, 'なんのかもくにチャレンジしますか？',class:"genre-select-label" %>
+      <div class="genre-select-pulldown" >
         <%= f.collection_select :genre_id_eq, Genre.where.not(id: 0), :id, :name, include_blank: '---' %>
+        <span class="finger">👈</span>
       </div>
       <%= f.submit 'もんだいをえらぶ' %>
     <% end %>
+  </div>
   <%# 課題を選ぶ %>
-
-  <%# 課題一覧 %>
-    <div class='question_contents'>
-      <h2 class='question_title'>えらべるもんだいだよ</h2>
-      <div class="main-genre">
-        <div class="japanese">
-          <%= link_to 'こくご', '#', class: 'japanese-link' %>
-        </div>
-        <div class="math">
-          <%= link_to 'さんすう', '#', class: 'math-link' %>
-        </div>
-        <div class="english">
-          <%= link_to 'えいご', '#', class: 'english-link' %>
-        </div>
-      </div>
-    </div>
-  <%# 課題一覧 %>
-
+  <%#  ネオン文字部分 %>
+  <div class="neon">
+    <div class="YDK1">tu peux le faire si tu essaies</div>
+    <div class="YDK2">you can do it if you try</div>
+    <div class="YDK3">やればできる</div>
+    <div class="YDK4">Si Potes Probare</div>
+    <div class="YDK5">ティモンディ高岸宏行さん</div>
+  </div>
+  <%#  ネオン文字部分 %>
   <%# 課題作成ボタン %>
   <%= link_to(new_question_path, class: 'new-question-btn') do %>
     <span class='new-question-btn-text'>課題を作成する</span>

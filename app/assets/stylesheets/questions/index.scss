@@ -1,14 +1,9 @@
 .main{
   background-color: rgb(239, 240, 220);
 }
-
-
 .title-contents {
-height: 60vh;
-background-image: image-url('D1A9A014-46AD-4DF1-8526-1C0F02C9D6BC_1_105_c.jpg');
-background-size: cover;
-background-repeat: no-repeat;
-background-position: top center;
+background-image: image-url('6yGcWWt6WaIF1aw1625735467_1625735650');
+background-size: 100% 100%;
 color: #fff;
 padding: 5vh;
 text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
@@ -27,68 +22,63 @@ text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 40px;
+  padding-bottom: 20px;
 }
 
-.genre-select{
-  margin: 10px 0;
+.genre-select-label{
+  margin: 5px 0;
+  font-size: 1.5rem;
+  text-shadow: 6px 2px 4px rgb(255, 235, 124);
+  color: rgb(87, 87, 87);
+}
+.genre-select-pulldown{
+  padding: 0 0 10px 25px;
 }
 
-
-.question_contents{
-  height: calc(100vh - 60vh - 8vh) ;
-  background-color: rgb(239, 240, 220);
+.finger{
+  animation: blink 0.5s ease-in-out infinite alternate;
 }
 
-.question_title{
-  font-size: 3vh;
+// ネオン文字の装飾
+.neon{
+  width: 100vw;
+  height: 235px;
   display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+  align-items: center;
+  flex-direction: column;
 }
-
-.main-genre{
-  display: flex;
-  justify-content: center;
+.YDK1{
+  font-size: 2rem;
+  color: rgb(243, 243, 234);
+  text-shadow: 0px 0px 40px #fcabf1;
+  animation: blink 2s ease-in-out infinite alternate;
 }
-
-
-.japanese{
-  width: 30vw;
-  height: 150px;
-  position: relative;
+.YDK2{
+  font-size: 2rem;
+  color:  rgb(243, 243, 234);
+  text-shadow: 0px 0px 20px #fc9cd2;
+  animation: blink 2s ease-in-out infinite alternate;
 }
-
-.math{
-  width: 30vw;
-  position: relative;
+.YDK3{
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 0px 0px 15px #fd55b4;
+  animation: blink 2s ease-in-out infinite alternate;
 }
-
-.english{
-  width: 30vw;
-  position: relative;
+.YDK4{
+  font-size: 2rem;
+  color: rgb(243, 243, 234);
+  text-shadow: 0px 0px 20px #fc9cd2;
+  animation: blink 2s ease-in-out infinite alternate;
 }
-
-.japanese-link{
-  text-decoration: none;
-  color: #333333;
-  text-shadow: 0 0 7px rgba(0, 0, 0, 0.9);
-  position: absolute;
-  left: 180px;
+.YDK5{
+  font-size: 2rem;
+  color: rgb(243, 243, 234);
+  text-shadow: 0px 0px 40px #fcabf1;
+  animation: blink 2s ease-in-out infinite alternate;
 }
-
-.math-link{
-  text-decoration: none;
-  color: #333333;
-  text-shadow: 0 0 7px rgba(0, 0, 0, 0.9);
-  position: absolute;
-  left: 180px;
+@keyframes blink{
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
-
-.english-link{
-  text-decoration: none;
-  color: #333333;
-  text-shadow: 0 0 7px rgba(0, 0, 0, 0.9);
-  position: absolute;
-  left: 180px;
-}
+// ネオン文字の装飾
