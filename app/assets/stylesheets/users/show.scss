@@ -70,7 +70,7 @@
 // _answer.html部分
 .my-page-score{
   margin-bottom: 5px;
-  height: 40px;
+  height: 35px;
   width: 30vw;
 }
 .user-answer-link{
@@ -82,12 +82,19 @@
   color: gray;
 }
 .check-the-answer-later{
-  background-color: red;
+  background-color: #cc3300;
   color: white;
+  margin-left: 10px;
   padding: 5px;
   text-decoration: none;
   border-radius: 2.5px;
   font-size: 0.75rem;
+  transition: 0.3s;
+}
+.check-the-answer-later:hover{
+  font-size: .90rem;
+  padding: 8px;
+  margin-left: 0;
 }
 // _answer.html部分
 
