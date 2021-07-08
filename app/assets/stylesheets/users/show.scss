@@ -70,6 +70,8 @@
 // _answer.html部分
 .my-page-score{
   margin-bottom: 5px;
+  height: 40px;
+  width: 30vw;
 }
 .user-answer-link{
   text-decoration: none;
@@ -78,6 +80,14 @@
 }
 .user-answer-score{
   color: gray;
+}
+.check-the-answer-later{
+  background-color: red;
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+  border-radius: 2.5px;
+  font-size: 0.75rem;
 }
 // _answer.html部分
 
