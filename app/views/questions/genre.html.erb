@@ -1,9 +1,9 @@
 <%= render "shared/header" %>
 <div class="genre-page">
   <% if @p.genre_id_eq.blank?%>
-    すべてのもんだいです
+    <span class="search">すべてのもんだいです</span>
   <% else %>
-    <%= @genre.name %>のもんだいページです
+    <span class="search"><%= "#{@genre.name}のもんだいページです" %></span>
   <% end %><br>
 
   <%# 検索結果の個数で条件分岐 %>
@@ -45,8 +45,8 @@
         </div>
       <% end %>
     <% else %>
-      ざんねん...もんだいは、まだありません
-  <% end %>
+      <span class="search-result-none">ざんねん...もんだいは、まだありません</span>
+    <% end %>
   </div>
   <%# 検索結果の個数で条件分岐 %>
 
