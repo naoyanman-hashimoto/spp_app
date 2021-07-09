@@ -18,7 +18,11 @@
             <% if current_user.id == result.user_id %>
               <span class="show-lists hidden" , id="lists">◇
                 <%= link_to "編集", edit_question_path(result.id), method: :get,    class:"question-link" %>
-                <%= link_to "削除", question_path(result.id),      method: :delete, class:"question-link" %>
+                <% if result.answers.blank? %>
+                  <%= link_to "削除", question_path(result.id),    method: :delete, class:"question-link" %>
+                <% else %>
+                  <span class="question-link">※すでに解答者がいる為、削除はできません</span>
+                <% end %>
               </span>
             <% end %>
           <% end %>
