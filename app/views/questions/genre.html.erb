@@ -13,7 +13,7 @@
         <div class="question-title" >
           <li class="genre-li">
           <%= link_to result.question_name, new_question_answer_path(question_id: result.id ) ,class: "genre-question-name", id: "button" %>
-
+          <%# 出題者のみ編集・削除機能を表示する条件分岐 %>
           <% if user_signed_in? %>
             <% if current_user.id == result.user_id %>
               <span class="show-lists hidden" , id="lists">◇
@@ -22,6 +22,17 @@
               </span>
             <% end %>
           <% end %>
+          <%# 出題者のみ編集・削除機能を表示する条件分岐 %>
+
+          <%# 解答履歴の有無でチェック表示を条件分岐 %>
+          <% if result.answers.present? %>
+            <% result.answers.each do |answer| %>
+              <% if user_signed_in? && answer.user.id == current_user.id %>
+                <span class="check">✅</span>
+              <% end %>
+            <% end %>
+          <% end %>
+          <%# 解答履歴の有無でチェック表示を条件分岐 %>
 
           <br>
           <span class="genre-tip">(ヒント：<%= result.tip %>）</span>
