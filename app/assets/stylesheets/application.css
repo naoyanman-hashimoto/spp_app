@@ -374,4 +374,15 @@ body{
 	.score-judge-submit{
 		margin: 20px 0 0 14vw;
 	}
+	/* 課題作成画面 */
+	.question-text{
+		width: 200px;
+	}
+	.question-text-area{
+		width: 240px;
+	}
+	.question-point{
+		width: 80px;
+		margin-bottom: 5px;
+	}
 }
