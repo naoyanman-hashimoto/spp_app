@@ -1,6 +1,10 @@
 // Place all the styles related to the scores controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.scores-answer-new{
+  display: flex;
+  justify-content: space-between;
+}
 
 .judge-criteria{
   color: rgb(119, 118, 118);
@@ -9,7 +13,6 @@
   font: bold 1rem sans-serif;
   padding: 1rem;
 }
-
 
 .answer-vs-model-answer{
   display: flex;

@@ -1,5 +1,11 @@
 <%= render "shared/header" %>
 <div class="answer-new">
+  <div class="center-answer-new">
+    <div class="set-timer" id="set-timer">
+      <span id='minit'></span>
+      <span id='seconds'></span>
+    </div>
+  </div>
   <div class="left-answer-new">
     <h2 class= question-name>
       【No.<%= @question.id %>】 <%= @question.question_name %>
@@ -24,12 +30,6 @@
         </div>
         <%=link_to 'あきらめる', root_path, class:"back-btn" %>
       <% end %>
-    </div>
-  </div>
-  <div class="center-answer-new">
-    <div class="set-timer" id="set-timer">
-      <span id='minit'></span>
-      <span id='seconds'></span>
     </div>
   </div>
   <div class="right-answer-new">
