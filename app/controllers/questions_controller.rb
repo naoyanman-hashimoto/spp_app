@@ -25,7 +25,6 @@ class QuestionsController < ApplicationController
     @results = @p.result
     genre_id = params[:q][:genre_id_eq]
     @genre = Genre.find_by(id: genre_id)
-    @question = Question.find_by(params[:question_id])
   end
 
   def edit

@@ -1,6 +1,12 @@
 .genre-page{
   margin-left: 20px;
 }
+.search{
+  font-size: 1.5rem;
+  border-bottom: double 3px rgb(212, 212, 212);
+  text-shadow: 1px 1px 4px rgb(112, 112, 112);
+  color: rgb(75, 75, 75);
+}
 
 .question-title{
   margin-top: 10px;
@@ -29,6 +35,10 @@
 .genre-user{
   color: rgb(119, 118, 118);
   border-bottom: 1px solid rgb(165, 165, 165);
+}
+
+.search-result-none{
+  font-size: 1.1rem;
 }
 
 .root-path-link{

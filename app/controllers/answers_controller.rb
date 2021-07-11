@@ -1,6 +1,6 @@
 class AnswersController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
-  before_action :set_question, only: [:new, :create]
+  before_action :set_question, only: [:new, :create, :show]
   before_action :move_to_index, only: [:new, :create]
 
   def new
@@ -15,6 +15,10 @@ class AnswersController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @answer   = Answer.find(params[:id])
   end
 
   private

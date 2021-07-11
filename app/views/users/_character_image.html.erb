@@ -1,0 +1,32 @@
+<%# キャラクターの画像 %>
+<div class="character">
+  <div class="character-image">
+    <% if @user.character_name == "たまご" %>
+      <%= image_tag 'KmoyUFSKciHfvBm1625672324.jpg',class: "character-image" %>
+    <% elsif @user.character_name == "ようちゅう" %>
+      <%= image_tag 'Bs2Hf8NnbGYtOC41625661275.jpg',class: "character-image" %>
+    <% elsif @user.character_name == "サナギ" %>
+      <%= image_tag 'giSTRQ8qlKQwedf1625662424.jpg',class: "character-image" %>
+    <% elsif @user.character_name == "カブトムシ" %>
+      <%= image_tag 'R0iOvGM4huUvR0S1625663994.jpg',class: "character-image" %>
+      <%= link_to '参考資料 : 最強のカブトムシの種類一覧と強さランキングTOP10', 'https://dangerous-creatures.com/kabutomusi/',class:"quote-link" %>
+    <% elsif @user.character_name == "エレファスゾウカブト" %>
+      <%= image_tag 'kqv46k5CrXuBPNC1625665270.jpg',class: "character-image" %>
+      <%= link_to '参考資料 : 最強のカブトムシの種類一覧と強さランキングTOP10', 'https://dangerous-creatures.com/kabutomusi/',class:"quote-link" %>
+    <% elsif @user.character_name == "アトラスオオカブト" %>
+      <%= image_tag '93oxFmLSBueOjxB1625666620.jpg',class: "character-image" %>
+      <%= link_to '参考資料 : 最強のカブトムシの種類一覧と強さランキングTOP10', 'https://dangerous-creatures.com/kabutomusi/',class:"quote-link" %>
+    <% elsif @user.character_name == "ネプチューンオオカブト" %>
+      <%= image_tag 'Ny76l1lu9RX2RZW1625668333.jpg',class: "character-image" %>
+      <%= link_to '参考資料 : 最強のカブトムシの種類一覧と強さランキングTOP10', 'https://dangerous-creatures.com/kabutomusi/',class:"quote-link" %>
+    <% elsif @user.character_name == "コーカサスオオカブト" %>
+      <%= image_tag 'RcUNZ5LBZYhKWaR1625669449.jpg',class: "character-image" %>
+      <%= link_to '参考資料 : 最強のカブトムシの種類一覧と強さランキングTOP10', 'https://dangerous-creatures.com/kabutomusi/',class:"quote-link" %>
+    <% elsif @user.character_name == "ヘラクレスオオカブト" %>
+      <%= image_tag 's4ai7ssW6K6DQnt1625671135.jpg',class: "character-image" %>
+      <%= link_to '参考資料 : 最強のカブトムシの種類一覧と強さランキングTOP10', 'https://dangerous-creatures.com/kabutomusi/',class:"quote-link" %>
+    <% else %>
+    <% end %>
+  </div>
+</div>
+<%# キャラクターの画像 %>

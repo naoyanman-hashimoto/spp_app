@@ -4,9 +4,18 @@
     <%= " No.#{answer.question.id}】"%>
   </span>
   <span>
-    <%= link_to answer.question.question_name, question_answer_score_path(answer.question.id,answer.id,answer.score.id), class:"user-answer-link" %>
+    <% if answer.score.present?%>
+      <%= link_to answer.question.question_name, question_answer_score_path(answer.question.id,answer.id,answer.score.id), class:"user-answer-link" %>
+    <% else %>
+      <%= link_to answer.question.question_name, question_answer_path(answer.question.id,answer.id), method: :GET , class:"user-answer-link" %>
+    <% end %>
   </span>
   <span class="user-answer-score">
-    <%= "#{answer.score.score}てん"%>
+    <% if answer.score.present?%>
+      <%= "#{answer.score.score}てん"%>
+    <% else %>
+      <%= link_to 'こたえあわせをする', new_question_answer_score_path(answer.question.id,answer.id) ,class: "check-the-answer-later" %>
+    <% end %>
   </span>
 </div>
+
