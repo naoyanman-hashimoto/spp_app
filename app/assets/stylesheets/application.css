@@ -76,3 +76,76 @@ table {
 body{
   background-color: rgb(243, 243, 234)
 }
+
+/* iPad Pro対応 */
+@media (max-width: 1024px) {
+	.dummy{
+		width: 350px;
+	}
+}
+
+/* iPad 対応 */
+@media (max-width: 768px) {
+	.dummy{
+		width: 120px;
+		font-size: 10px;
+	}
+}
+
+/* iPhone 6/7/8対応 */
+@media (max-width: 375px) {
+	/* ヘッダー部 */
+	.header-title{
+		font-size: 1rem;
+	}
+	.title_description{
+		font-size: 2px;
+		padding: 5px 15px 0 0;
+	}
+	.dummy{
+		width: 10px;
+	}
+	.lists-right{
+		padding-top: 10px;
+		font-size: 0.5rem;
+	}
+	.user-nickname {
+		margin-right: 1vw;
+	}
+	.login {
+		margin-right: 1vw;
+	}
+/* アプリ広告部 */
+	.title-contents{
+		padding: 10px;
+	}
+	.service-title {
+		font-size: 15px;
+	}
+	.service-explain{
+		font-size: 10px;
+	}
+	.genre-select-label{
+		font-size: 12px;
+	}
+	/* ネオン文字部 */
+	.neon{
+		font-size: 10px;
+	}
+
+	/* 課題作成ボタン */
+	.new-question-btn {
+		width: 80px;
+		border-radius: 15%;
+		bottom: 10px;
+		right: 10px;
+		padding: 5px;
+	}
+	.new-question-btn-text {
+		font-size: 12px;
+	}
+	.new-question-btn-icon {
+		width: 30%;
+		height: 30%;
+	}
+}
