@@ -52,6 +52,7 @@
       <div class="judge-message">
         <span>↓↓↓てんすうをにゅうりょくしてね↓↓↓</span>
       </div>
+      <%= render 'shared/error_messages', model: f.object %>
       <div class="judge-field">
         <div class="judge-input">
           <%= f.number_field :score, class:"score-judge", placeholder:"てんすう",min: 0, max: 10 %><span>てん</span>
