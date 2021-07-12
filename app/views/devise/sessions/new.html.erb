@@ -3,10 +3,14 @@
   <h2>ログインページ</h2>
   <h2>(ログイン がめんだよ)</h2>
   <span><em>わからないときは、おうちのひとにきこうね</em></span>
-
+  
+  <div class='login-flash-message'><br/>
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
+  </div>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field"><br/>
-      <%= f.label :メールアドレス %><br />
+    <div class="field">
+      <%= f.label :メールアドレス %><br/>
       <div class="email-description">(とうろくしたメールアドレスをにゅうりょくしてね)</div>
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div><br />

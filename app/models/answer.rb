@@ -9,6 +9,6 @@ class Answer < ApplicationRecord
   validates :user
   validates :question
   validates :answer_content,
-            format: { without: FORBIDDEN_CHARACTERS_REGEX, message: 'is invalid. Contains inappropriate content' }
+            format: { without: FORBIDDEN_CHARACTERS_REGEX, message: 'に、使ってはいけない文字が含まれています' }
   end
 end

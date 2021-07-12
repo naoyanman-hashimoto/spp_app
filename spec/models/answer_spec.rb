@@ -18,27 +18,27 @@ RSpec.describe Answer, type: :model do
         it '回答内容(answer_content)は空では保存できないこと' do
           @answer.answer_content = ''
           @answer.valid?
-          expect(@answer.errors.full_messages).to include("Answer content can't be blank")
+          expect(@answer.errors.full_messages).to include('かいとうを入力してください')
         end
         it '回答内容(answer_content)に不適切な言葉(死)が含まれていると保存出来ない' do
           @answer.answer_content = '死ね'
           @answer.valid?
-          expect(@answer.errors.full_messages).to include('Answer content is invalid. Contains inappropriate content')
+          expect(@answer.errors.full_messages).to include('かいとうに、使ってはいけない文字が含まれています')
         end
         it '回答内容(answer_content)に不適切な言葉(殺)が含まれていると保存出来ない' do
           @answer.answer_content = '殺す'
           @answer.valid?
-          expect(@answer.errors.full_messages).to include('Answer content is invalid. Contains inappropriate content')
+          expect(@answer.errors.full_messages).to include('かいとうに、使ってはいけない文字が含まれています')
         end
         it 'user_idが空では保存できないこと' do
           @answer.user_id = nil
           @answer.valid?
-          expect(@answer.errors.full_messages).to include("User can't be blank")
+          expect(@answer.errors.full_messages).to include('Userを入力してください')
         end
         it 'question_idが空では保存できないこと' do
           @answer.question_id = nil
           @answer.valid?
-          expect(@answer.errors.full_messages).to include("Question can't be blank")
+          expect(@answer.errors.full_messages).to include('Questionを入力してください')
         end
       end
     end
