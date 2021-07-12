@@ -206,6 +206,10 @@ body{
 	.registrations-new-page{
 		font-size: 12px;
 	}
+	/* ログインページ */
+	.sessions-new-page{
+		font-size: 12px;
+	}
 	/* 課題作成ボタン */
 	.new-question-btn {
 		width: 80px;
