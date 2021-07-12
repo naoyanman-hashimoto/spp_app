@@ -3,6 +3,9 @@ ja:
     attributes:
       user:
         nickname: ニックネーム
+        character_name: キャラクター名
+        level: レベル
+        experience_point: 経験値
       answer:
         answer_content: かいとう
       question:
