@@ -1,47 +1,48 @@
 <%= render "shared/header" %>
 <div class="registrations-new-page">
-  <h2>Sign up</h2>
-  <h2>( しんきとうろく がめんだよ )</h2><br />
+  <h2>新規登録ページ</h2>
+  <h2>(しんきとうろく がめんだよ)</h2>
+  <span><em>おうちのひとと、そうだんしながらはじめてね</em></span>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %><br />
 
     <div class="field">
-      <%= f.label :nickname %><br />
-      <div class="nickname-description">( ニックネームをきめてね )</div>
-      <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
+      <%= f.label :ニックネーム %><br />
+      <div class="nickname-description">(ニックネームはアプリのなかで、つかえるなまえだよ)</div>
+      <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", placeholder:"例) test太郎" %>
     </div><br />
 
     <div class="field">
-      <%= f.label :email %><br />
-      <div class="email-description">( メールアドレスをにゅうりょくしてね )</div>
-      <%= f.email_field :email, autocomplete: "email" %>
+      <%= f.label :メールアドレス %><br />
+      <div class="email-description">(メールアドレスは、てきとうなものでもいいよ)</div>
+      <%= f.email_field :email, autocomplete: "email", placeholder:"例) test@test.com" %>
     </div><br />
 
     <div class="field">
-      <%= f.label :password %>
+      <%= f.label :パスワード %>
           <div class="password-description"></div>
       <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <em>(<%= @minimum_password_length %>もじいじょう、ひつようだよ)</em>
       <% end %><br />
       <div class="password-description">
-      ( パスワードをきめてね。 少なくても、6もじはひつようだよ )
+      (パスワードはわすれないものにしようね)
       </div>
-      <%= f.password_field :password, autocomplete: "new-password" %>
+      <%= f.password_field :password, autocomplete: "new-password", placeholder:"例) 20150707" %>
     </div><br />
 
     <div class="field">
-      <%= f.label :password_confirmation %><br />
+      <%= f.label :パスワードのかくにん%><br />
       <div class="password-confirmation-description">
-      ( パスワードをかくにんするよ。 おなじパスワードをもういちど、にゅうりょくしてね )
+      ( パスワードをかくにんするよ。<br> おなじパスワードをもういちど、にゅうりょくしてね )
       </div>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"例) 20150707" %>
     </div><br />
 
     <div class="actions">
       <div class="sign-up-description">
-      ( とうろくするよ。 ↓のSign upボタンを押してね )
+      (↓のとうろくして あそぶボタンをポチしてね)
       </div>
-      <%= f.submit "Sign up" %>
+      <%= f.submit "とうろくして あそぶ" %>
     </div>
   <% end %>
 </div>

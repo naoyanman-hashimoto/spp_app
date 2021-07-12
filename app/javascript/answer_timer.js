@@ -16,7 +16,7 @@ function countdowntimer(){
     countdownEL.innerHTML = `残り時間${minites}分${seconds}秒`;
     time--;
     if (time === 0) {
-    alert('じかんです!よくばんばりました✨ きょうかしょを見るか、大人の人に聞いてみてね^^');
+    alert('じかんです!よくばんばりました✨\nきょうかしょをみるか、おとなのひとにきいてみてね^^');
     clearInterval(timerID);
     };
   };

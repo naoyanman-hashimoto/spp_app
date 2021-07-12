@@ -1,19 +1,20 @@
 <%= render "shared/header" %>
 <div class="sessions-new-page">
-  <h2>Log in</h2>
-  <h2>( ログイン がめんだよ )</h2><br />
+  <h2>ログインページ</h2>
+  <h2>(ログイン がめんだよ)</h2>
+  <span><em>わからないときは、おうちのひとにきこうね</em></span>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.label :email %><br />
-      <div class="email-description">( メールアドレスをにゅうりょくしてね )</div>
+    <div class="field"><br/>
+      <%= f.label :メールアドレス %><br />
+      <div class="email-description">(とうろくしたメールアドレスをにゅうりょくしてね)</div>
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div><br />
 
     <div class="field">
-      <%= f.label :password %><br />
+      <%= f.label :パスワード %><br />
       <div class="password-description">
-      ( パスワードをおもいだして、にゅうりょくしてね )
+      (パスワードをおもいだして、にゅうりょくしてね)
       </div>
       <%= f.password_field :password, autocomplete: "current-password" %>
     </div><br />
@@ -23,9 +24,9 @@
       ( さぁ、ログインしてあそぼう！)
       </div>
       <div class="sign-up-description">
-      (↓Log inのボタンをおしてね )
+      (↓ログインしてあそぶボタンをおしてね )
       </div>
-      <%= f.submit "Log in" %>
+      <%= f.submit "ログインしてあそぶ" %>
     </div>
   <% end %>
 </div>
