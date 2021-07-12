@@ -15,15 +15,15 @@ class Question < ApplicationRecord
   with_options presence: true do
     validates :user
     validates :question_name,
-              format: { without: FORBIDDEN_CHARACTERS_REGEX, message: 'is invalid. Contains inappropriate content' }
+              format: { without: FORBIDDEN_CHARACTERS_REGEX, message: 'に、使ってはいけない文字が含まれています' }
     validates :question_content, uniqueness: { case_sensitive: true } ,
-              format: { without: FORBIDDEN_CHARACTERS_REGEX, message: 'is invalid. Contains inappropriate content' }
+              format: { without: FORBIDDEN_CHARACTERS_REGEX, message: 'に、使ってはいけない文字が含まれています' }
     validates :model_answer,
-              format: { without: FORBIDDEN_CHARACTERS_REGEX, message: 'is invalid. Contains inappropriate content' }
+              format: { without: FORBIDDEN_CHARACTERS_REGEX, message: 'に、使ってはいけない文字が含まれています' }
     validates :point,
               numericality: { only_integer: true, greater_than_or_equal_to: 10,
                               less_than_or_equal_to: 3000,
-                              message: 'is out of setting range' }
+                              message: 'が設定できる範囲外です' }
   end
 # バリデーションの設定
 end
