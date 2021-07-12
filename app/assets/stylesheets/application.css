@@ -202,7 +202,10 @@ body{
 	.neon{
 		font-size: 10px;
 	}
-
+	/* 新規登録ページ */
+	.registrations-new-page{
+		font-size: 12px;
+	}
 	/* 課題作成ボタン */
 	.new-question-btn {
 		width: 80px;
