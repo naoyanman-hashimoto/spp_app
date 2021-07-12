@@ -68,3 +68,5 @@ gem 'ransack'
 gem 'pry-rails'
 
 gem 'activerecord-import'
+
+gem 'rails-i18n'
