@@ -14,3 +14,5 @@ ja:
         model_answer: 模範解答
         point: 獲得経験値
         genre_id: ジャンル
+      score:
+        score: 点数

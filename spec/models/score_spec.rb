@@ -18,47 +18,47 @@ RSpec.describe Score, type: :model do
         it '点数が空では保存されないこと' do
           @score.score = ''
           @score.valid?
-          expect(@score.errors.full_messages).to include("Score can't be blank")
+          expect(@score.errors.full_messages).to include('点数を入力してください')
         end
         it '点数が10点以上では保存されないこと' do
           @score.score = '11'
           @score.valid?
-          expect(@score.errors.full_messages).to include('Score is out of setting range')
+          expect(@score.errors.full_messages).to include('点数が設定の範囲外です。半角数値の0~10点で入力してください')
         end
         it '点数が0点以下では保存されないこと' do
           @score.score = '-1'
           @score.valid?
-          expect(@score.errors.full_messages).to include('Score is out of setting range')
+          expect(@score.errors.full_messages).to include('点数が設定の範囲外です。半角数値の0~10点で入力してください')
         end
         it '点数は全角数値では保存されないこと' do
           @score.score = '１０'
           @score.valid?
-          expect(@score.errors.full_messages).to include('Score is out of setting range')
+          expect(@score.errors.full_messages).to include('点数が設定の範囲外です。半角数値の0~10点で入力してください')
         end
         it '点数は漢数字では保存されないこと' do
           @score.score = '十'
           @score.valid?
-          expect(@score.errors.full_messages).to include('Score is out of setting range')
+          expect(@score.errors.full_messages).to include('点数が設定の範囲外です。半角数値の0~10点で入力してください')
         end
         it '点数は英字では保存されないこと' do
           @score.score = 'ten'
           @score.valid?
-          expect(@score.errors.full_messages).to include('Score is out of setting range')
+          expect(@score.errors.full_messages).to include('点数が設定の範囲外です。半角数値の0~10点で入力してください')
         end
         it '点数は半英数字混同では保存できないこと' do
           @score.score = '1o'
           @score.valid?
-          expect(@score.errors.full_messages).to include('Score is out of setting range')
+          expect(@score.errors.full_messages).to include('点数が設定の範囲外です。半角数値の0~10点で入力してください')
         end
         it 'user_idが空では保存できないこと' do
           @score.user_id = nil
           @score.valid?
-          expect(@score.errors.full_messages).to include("User can't be blank")
+          expect(@score.errors.full_messages).to include("Userを入力してください")
         end
         it 'answer_idが空では保存できないこと' do
           @score.answer_id = nil
           @score.valid?
-          expect(@score.errors.full_messages).to include("Answer can't be blank")
+          expect(@score.errors.full_messages).to include("Answerを入力してください")
         end
       end
     end
