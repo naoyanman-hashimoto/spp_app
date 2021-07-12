@@ -10,7 +10,7 @@ class Question < ApplicationRecord
 # バリデーションの設定
   FORBIDDEN_CHARACTERS_REGEX = /[死殺]/
 
-  validates :genre_id, numericality: { other_than: 0, message: "can't be blank" }
+  validates :genre_id, numericality: { other_than: 0, message: "は未選択では保存できません" }
 
   with_options presence: true do
     validates :user
