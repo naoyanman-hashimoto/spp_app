@@ -12,6 +12,10 @@
   margin-top: 10px;
   list-style-type: circle;
 }
+.genre---li{
+  color: darkgray;
+  font-size: 12px;
+}
 
 .genre-question-name{
   text-decoration: none;
