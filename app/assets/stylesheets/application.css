@@ -77,6 +77,24 @@ body{
   background-color: rgb(243, 243, 234)
 }
 
+@media (max-width: 1362px) {
+	/* ヘッダー部 */
+	.title_description{
+		padding: 10px 0 0 0;
+	}
+	.dummy{
+		width: 530px;
+	}
+}
+@media (max-width: 1162px) {
+	/* ヘッダー部 */
+/* .title_description{
+	padding: 10px 0 0 0;
+} */
+	.dummy{
+		width: 400px;
+	}
+}
 /* iPad Pro対応 */
 @media (max-width: 1024px) {
 	/* ヘッダー部 */
@@ -287,6 +305,9 @@ body{
 	}
 	.question-title{
 		list-style: none;
+	}
+	.genre---li{
+		font-size: 10px;
 	}
 	.genre-tip{
 		margin-left: 0;
