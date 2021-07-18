@@ -38,6 +38,16 @@
       <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"例) 20150707" %>
     </div><br />
 
+    <div class="field">
+      <div class="character-grow-radio">
+      そだてたいキャラクターをえらんでね
+      </div>
+      <%= f.radio_button :character, "カブトムシ" %>
+      <%= f.label :カブトムシ%>
+      <%= f.radio_button :character, "クワガタムシ" %>
+      <%= f.label :クワガタムシ%>
+    </div><br />
+
     <div class="actions">
       <div class="sign-up-description">
       (↓のとうろくして あそぶボタンをポチしてね)

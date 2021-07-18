@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 2021_07_05_120917) do
     t.string "nickname", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "character", null: false
     t.string "character_name", default: "たまご"
     t.integer "level", default: 1
     t.integer "experience_point", default: 0
