@@ -1,6 +1,6 @@
 users = []
 10.times do |i|
-  users << User.new(nickname: "dummy-#{i+1}", email: "test#{i+1}@test.com", password: '111111', character_name: 'たまご', level: 1, experience_point: 0 )
+  users << User.new(nickname: "dummy-#{i+1}", email: "test#{i+1}@test.com", password: '111111', character: 'カブトムシ', character_name: 'たまご', level: 1, experience_point: 0 )
 end
 User.import users
 
