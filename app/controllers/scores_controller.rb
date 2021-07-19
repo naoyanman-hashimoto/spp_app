@@ -39,10 +39,12 @@ class ScoresController < ApplicationController
         flash[:notice] = "レベルが上がりました！"
       end
 
-      if  beetle_evolution = BeetleEvolution.find_by(level: user.level );
-        if beetle_evolution.level <= user.level
-          user.update(character_name: beetle_evolution.character_name)
-          flash[:notice] = "キャラクターが進化しました！！"
+      if user.character == 'カブトムシ'
+        if  beetle_evolution = BeetleEvolution.find_by(level: user.level );
+          if beetle_evolution.level <= user.level
+            user.update(character_name: beetle_evolution.character_name)
+            flash[:notice] = "キャラクターが進化しました！！"
+          end
         end
       end
 
