@@ -46,6 +46,13 @@ class ScoresController < ApplicationController
             flash[:notice] = "キャラクターが進化しました！！"
           end
         end
+      else user.character == 'クワガタムシ'
+        if  stag_beetle_evolution = StagBeetleEvolution.find_by(level: user.level );
+          if stag_beetle_evolution.level <= user.level
+            user.update(character_name: stag_beetle_evolution.character_name)
+            flash[:notice] = "キャラクターが進化しました！！"
+          end
+        end
       end
 
       redirect_to root_path
