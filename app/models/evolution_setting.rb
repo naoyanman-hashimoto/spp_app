@@ -1,2 +1,0 @@
-class EvolutionSetting < ApplicationRecord
-end

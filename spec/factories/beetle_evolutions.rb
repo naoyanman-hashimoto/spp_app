@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :evolution_setting do
+  factory :beetle_evolution do
     
   end
 end

@@ -1,0 +1,2 @@
+class BeetleEvolution < ApplicationRecord
+end
