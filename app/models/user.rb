@@ -10,6 +10,7 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :nickname
+    validates :character, presence: {message: 'をえらんでください' }
     validates :character_name
     validates :level
     validates :experience_point

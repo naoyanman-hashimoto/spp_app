@@ -1,31 +1,60 @@
 <%# キャラクターの画像 %>
 <div class="character">
   <div class="character-image">
-    <% if @user.character_name == "たまご" %>
-      <%= image_tag 'KmoyUFSKciHfvBm1625672324.jpg',class: "character-image" %>
-    <% elsif @user.character_name == "ようちゅう" %>
-      <%= image_tag 'Bs2Hf8NnbGYtOC41625661275.jpg',class: "character-image" %>
-    <% elsif @user.character_name == "サナギ" %>
-      <%= image_tag 'giSTRQ8qlKQwedf1625662424.jpg',class: "character-image" %>
-    <% elsif @user.character_name == "カブトムシ" %>
-      <%= image_tag 'R0iOvGM4huUvR0S1625663994.jpg',class: "character-image" %>
-      <%= link_to '参考資料 : 最強のカブトムシの種類一覧と強さランキングTOP10', 'https://dangerous-creatures.com/kabutomusi/',class:"quote-link" %>
-    <% elsif @user.character_name == "エレファスゾウカブト" %>
-      <%= image_tag 'kqv46k5CrXuBPNC1625665270.jpg',class: "character-image" %>
-      <%= link_to '参考資料 : 最強のカブトムシの種類一覧と強さランキングTOP10', 'https://dangerous-creatures.com/kabutomusi/',class:"quote-link" %>
-    <% elsif @user.character_name == "アトラスオオカブト" %>
-      <%= image_tag '93oxFmLSBueOjxB1625666620.jpg',class: "character-image" %>
-      <%= link_to '参考資料 : 最強のカブトムシの種類一覧と強さランキングTOP10', 'https://dangerous-creatures.com/kabutomusi/',class:"quote-link" %>
-    <% elsif @user.character_name == "ネプチューンオオカブト" %>
-      <%= image_tag 'Ny76l1lu9RX2RZW1625668333.jpg',class: "character-image" %>
-      <%= link_to '参考資料 : 最強のカブトムシの種類一覧と強さランキングTOP10', 'https://dangerous-creatures.com/kabutomusi/',class:"quote-link" %>
-    <% elsif @user.character_name == "コーカサスオオカブト" %>
-      <%= image_tag 'RcUNZ5LBZYhKWaR1625669449.jpg',class: "character-image" %>
-      <%= link_to '参考資料 : 最強のカブトムシの種類一覧と強さランキングTOP10', 'https://dangerous-creatures.com/kabutomusi/',class:"quote-link" %>
-    <% elsif @user.character_name == "ヘラクレスオオカブト" %>
-      <%= image_tag 's4ai7ssW6K6DQnt1625671135.jpg',class: "character-image" %>
-      <%= link_to '参考資料 : 最強のカブトムシの種類一覧と強さランキングTOP10', 'https://dangerous-creatures.com/kabutomusi/',class:"quote-link" %>
-    <% else %>
+    <% if @user.character == "カブトムシ" %>
+      <% if @user.character_name == "たまご" %>
+        <%= image_tag 'KmoyUFSKciHfvBm1625672324.jpg',class: "character-image" %>
+      <% elsif @user.character_name == "ようちゅう" %>
+        <%= image_tag 'Bs2Hf8NnbGYtOC41625661275.jpg',class: "character-image" %>
+      <% elsif @user.character_name == "サナギ" %>
+        <%= image_tag 'giSTRQ8qlKQwedf1625662424.jpg',class: "character-image" %>
+      <% elsif @user.character_name == "カブトムシ" %>
+        <%= image_tag 'R0iOvGM4huUvR0S1625663994.jpg',class: "character-image" %>
+        <%= link_to '参考資料 : 最強のカブトムシの種類一覧と強さランキングTOP10', 'https://dangerous-creatures.com/kabutomusi/',class:"quote-link" %>
+      <% elsif @user.character_name == "エレファスゾウカブト" %>
+        <%= image_tag 'kqv46k5CrXuBPNC1625665270.jpg',class: "character-image" %>
+        <%= link_to '参考資料 : 最強のカブトムシの種類一覧と強さランキングTOP10', 'https://dangerous-creatures.com/kabutomusi/',class:"quote-link" %>
+      <% elsif @user.character_name == "アトラスオオカブト" %>
+        <%= image_tag '93oxFmLSBueOjxB1625666620.jpg',class: "character-image" %>
+        <%= link_to '参考資料 : 最強のカブトムシの種類一覧と強さランキングTOP10', 'https://dangerous-creatures.com/kabutomusi/',class:"quote-link" %>
+      <% elsif @user.character_name == "ネプチューンオオカブト" %>
+        <%= image_tag 'Ny76l1lu9RX2RZW1625668333.jpg',class: "character-image" %>
+        <%= link_to '参考資料 : 最強のカブトムシの種類一覧と強さランキングTOP10', 'https://dangerous-creatures.com/kabutomusi/',class:"quote-link" %>
+      <% elsif @user.character_name == "コーカサスオオカブト" %>
+        <%= image_tag 'RcUNZ5LBZYhKWaR1625669449.jpg',class: "character-image" %>
+        <%= link_to '参考資料 : 最強のカブトムシの種類一覧と強さランキングTOP10', 'https://dangerous-creatures.com/kabutomusi/',class:"quote-link" %>
+      <% elsif @user.character_name == "ヘラクレスオオカブト" %>
+        <%= image_tag 's4ai7ssW6K6DQnt1625671135.jpg',class: "character-image" %>
+        <%= link_to '参考資料 : 最強のカブトムシの種類一覧と強さランキングTOP10', 'https://dangerous-creatures.com/kabutomusi/',class:"quote-link" %>
+      <% else %>
+      <% end %>
+    <% end %>
+    <% if @user.character == "クワガタムシ" %>
+      <% if @user.character_name == "たまご" %>
+        <%= image_tag 'KmoyUFSKciHfvBm1625672324.jpg',class: "character-image" %>
+      <% elsif @user.character_name == "ようちゅう" %>
+        <%= image_tag 'Bs2Hf8NnbGYtOC41625661275.jpg',class: "character-image" %>
+      <% elsif @user.character_name == "サナギ" %>
+        <%= image_tag 'wIwxIugqbYbwHyj1626751547.jpg',class: "character-image" %>
+      <% elsif @user.character_name == "クワガタムシ" %>
+        <%= image_tag 'kSyknmhD5BURdcY1626741402.jpg',class: "character-image" %>
+      <% elsif @user.character_name == "グランディスオオクワガタ" %>
+        <%= image_tag 'sV8rsCXmUXZTr8V1626742736.jpg',class: "character-image" %>
+        <%= link_to '参考資料 : 最強のクワガタの種類一覧と強さランキングTOP10', 'https://dangerous-creatures.com/kuwagata/',class:"quote-link" %>
+      <% elsif @user.character_name == "ギラファノコギリクワガタ" %>
+        <%= image_tag 'u7PYUYoKek4Ru6N1626743929.jpg',class: "character-image" %>
+        <%= link_to '参考資料 : 最強のクワガタの種類一覧と強さランキングTOP10', 'https://dangerous-creatures.com/kuwagata/',class:"quote-link" %>
+      <% elsif @user.character_name == "ジュダイクスミヤマクワガタ" %>
+        <%= image_tag 'u9V6YGU7TRz8X791626745035.jpg',class: "character-image" %>
+        <%= link_to '参考資料 : 最強のクワガタの種類一覧と強さランキングTOP10', 'https://dangerous-creatures.com/kuwagata/',class:"quote-link" %>
+      <% elsif @user.character_name == "パラワンオオヒラタクワガタ" %>
+        <%= image_tag 'P6NYjwph4KQS8vo1626750072.jpg',class: "character-image" %>
+        <%= link_to '参考資料 : 最強のクワガタの種類一覧と強さランキングTOP10', 'https://dangerous-creatures.com/kuwagata/',class:"quote-link" %>
+      <% elsif @user.character_name == "スマトラオオヒラタクワガタ" %>
+        <%= image_tag 'G3KDUBCMhbYhe3Y1626750867.jpg',class: "character-image" %>
+        <%= link_to '参考資料 : 最強のクワガタの種類一覧と強さランキングTOP10', 'https://dangerous-creatures.com/kuwagata/',class:"quote-link" %>
+      <% else %>
+      <% end %>
     <% end %>
   </div>
 </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_05_120917) do
+ActiveRecord::Schema.define(version: 2021_07_19_022118) do
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2021_07_05_120917) do
     t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
-  create_table "evolution_settings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "beetle_evolutions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "level", null: false
     t.string "character_name", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -59,10 +59,18 @@ ActiveRecord::Schema.define(version: 2021_07_05_120917) do
     t.index ["user_id"], name: "index_scores_on_user_id"
   end
 
+  create_table "stag_beetle_evolutions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "level", null: false
+    t.string "character_name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "character", null: false
     t.string "character_name", default: "たまご"
     t.integer "level", default: 1
     t.integer "experience_point", default: 0

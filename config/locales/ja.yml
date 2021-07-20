@@ -3,6 +3,7 @@ ja:
     attributes:
       user:
         nickname: ニックネーム
+        character: キャラクター
         character_name: キャラクター名
         level: レベル
         experience_point: 経験値

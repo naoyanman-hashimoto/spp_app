@@ -45,6 +45,11 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include('パスワード（確認用）とパスワードの入力が一致しません')
       end
+      it 'characterが未選択では登録出来ない' do
+        @user.character = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include('キャラクターをえらんでください')
+      end
       it 'character_nameが空では登録出来ない' do
         @user.character_name = ''
         @user.valid?

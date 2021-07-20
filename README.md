@@ -7,6 +7,7 @@
 | nickname           | string  | null: false                   |
 | email              | string  | null: false, unique: true     |
 | encrypted_password | string  | null: false                   |
+| character          | string  | null: false                   |
 | character_name     | string  | null: false, default: "たまご" |
 | level              | integer | null: false, default: "1"     |
 | experience_point   | integer | null: false, default: "0"     |
@@ -68,7 +69,15 @@
 ### Association
 
 
-## evolution_setting テーブル
+## beetle_evolution テーブル
+| Column             | Type    | Options      |
+| ------------------ | ------- | ------------ |
+| level              | integer | null: false  |
+| character_name     | string  | null: false  |
+
+### Association
+
+## stag_beetle_evolution テーブル
 | Column             | Type    | Options      |
 | ------------------ | ------- | ------------ |
 | level              | integer | null: false  |
