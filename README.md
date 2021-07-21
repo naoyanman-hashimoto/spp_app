@@ -74,7 +74,7 @@ https://spp-app-35965.herokuapp.com/
 
 # DEMO
 ### 未ログイン状態で20秒経過した場合、新規登録かログインを案内するメッセージ
-[![Image from Gyazo](https://i.gyazo.com/97cba887b3ab56f1d5b34e9f64e5f9df.gif)](https://gyazo.com/97cba887b3ab56f1d5b34e9f64e5f9df)
+[![Image from Gyazo](https://i.gyazo.com/fa9e5213d7c4e40b6ab34ec0be8ad888.gif)](https://gyazo.com/fa9e5213d7c4e40b6ab34ec0be8ad888)
 
 ### ログイン後、科目を選択すると問題一覧を確認出来ます。<br>既に解答済みの問題にはチェックが入っていますので、未解答の問題が視覚的に分かります。
 [![Image from Gyazo](https://i.gyazo.com/8f0396024e00ecd7bbb6f99c96c4be8d.gif)](https://gyazo.com/8f0396024e00ecd7bbb6f99c96c4be8d)
