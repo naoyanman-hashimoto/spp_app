@@ -10,16 +10,6 @@ class ScoresController < ApplicationController
   end
 
   def create
-    @score = Score.new(score_params)
-    if @score.valid?
-      @score.save
-      redirect_to root_path
-    else
-      render :new
-    end
-  end
-
-  def create
     user = current_user
     @score = Score.new(score_params)
     if @score.valid?
