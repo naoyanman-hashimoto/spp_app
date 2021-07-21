@@ -10,16 +10,6 @@ class ScoresController < ApplicationController
   end
 
   def create
-    @score = Score.new(score_params)
-    if @score.valid?
-      @score.save
-      redirect_to root_path
-    else
-      render :new
-    end
-  end
-
-  def create
     user = current_user
     @score = Score.new(score_params)
     if @score.valid?
@@ -35,23 +25,25 @@ class ScoresController < ApplicationController
       levelSetting = LevelSetting.find_by(level: user.level + 1);
       if levelSetting.thresold <= user.experience_point
         user.level = user.level + 1
-        user.update(level: user.level)
-        flash[:notice] = "レベルが上がりました！"
-      end
+        if user.update(level: user.level)
+          flash[:notice] = "レベルが上がりました！"
 
-      if user.character == 'カブトムシ'
-        if  beetle_evolution = BeetleEvolution.find_by(level: user.level );
-          if beetle_evolution.level <= user.level
-            user.update(character_name: beetle_evolution.character_name)
-            flash[:notice] = "キャラクターが進化しました！！"
+          if user.character == 'カブトムシ'
+            if  beetle_evolution = BeetleEvolution.find_by(level: user.level );
+              if beetle_evolution.level <= user.level
+                user.update(character_name: beetle_evolution.character_name)
+                flash[:notice] = "キャラクターが進化しました！！"
+              end
+            end
+          else user.character == 'クワガタムシ'
+            if  stag_beetle_evolution = StagBeetleEvolution.find_by(level: user.level );
+              if stag_beetle_evolution.level <= user.level
+                user.update(character_name: stag_beetle_evolution.character_name)
+                flash[:notice] = "キャラクターが進化しました！！"
+              end
+            end
           end
-        end
-      else user.character == 'クワガタムシ'
-        if  stag_beetle_evolution = StagBeetleEvolution.find_by(level: user.level );
-          if stag_beetle_evolution.level <= user.level
-            user.update(character_name: stag_beetle_evolution.character_name)
-            flash[:notice] = "キャラクターが進化しました！！"
-          end
+
         end
       end
 
