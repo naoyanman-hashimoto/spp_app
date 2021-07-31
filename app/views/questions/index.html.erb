@@ -45,4 +45,47 @@
   <% end %>
   <%# 課題作成ボタン %>
 
+  <div class="questions">
+    <div class="math">
+      <div class="subjects">
+        <span class="subject">さんすう</span>
+      </div>
+      <% @questions.each do |question| %>
+        <li class='list'>
+          <% if question.genre_id == 2 %>
+            <span class="question-num"><%= "《No.#{question.id}》" %></span>
+            <%= link_to question.question_name, new_question_answer_path(question.id) ,class: "top-page-question-name", id: "button" %>
+          <% end %>
+        </li>
+      <% end %>
+    </div>
+    <div class="japanese">
+      <div class="subjects">
+        <span class="subject">こくご</span>
+      </div>
+      <% @questions.each do |question| %>
+        <li class='list'>
+          <% if question.genre_id == 1 %>
+            <span class="question-num"><%= "《No.#{question.id}》" %></span>
+            <%= link_to question.question_name, new_question_answer_path(question.id) ,class: "top-page-question-name", id: "button" %>
+          <% end %>
+        </li>
+      <% end %>
+    </div>
+    <div class="english">
+      <div class="subjects">
+        <span class="subject">えいご</span>
+      </div>
+      <% @questions.each do |question| %>
+        <li class='list'>
+          <% if question.genre_id == 3 %>
+            <span class="question-num"><%= "《No.#{question.id}》" %></span>
+            <%= link_to question.question_name, new_question_answer_path(question.id) ,class: "top-page-question-name", id: "button" %>
+          <% end %>
+        </li>
+      <% end %>
+    </div>
+  </div>
+
+
 </div>
