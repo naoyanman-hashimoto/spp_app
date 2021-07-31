@@ -79,3 +79,70 @@ text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
   100% {opacity:1;}
 }
 // ネオン文字の装飾
+
+
+// トップページ下部課題一覧
+.subjects{
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 0 0 5px grey;
+  font-size: 1.2rem;
+}
+.question-num{
+  color: grey;
+}
+.top-page-question-name{
+  text-decoration: none;
+  color: grey;
+}
+
+.math{
+  width: 50%;
+  list-style: none;
+  background-color: rgb(255, 255, 255);
+  margin: 5vh auto 0;
+  padding: 1.5% 10%;
+  border: 1px solid rgb(216, 216, 216);
+  transition: 0.3s;
+}
+.math:hover{
+  background-color: rgba(243, 233, 176, 0.5);
+  transition: 0.3s;
+  .subjects{
+    text-shadow: 0 0 5px red;
+  }
+}
+.japanese{
+  width: 50%;
+  list-style: none;
+  background-color: rgb(255, 242, 242);
+  margin: 0 auto;
+  padding: 1.5% 10%;
+  border: 1px solid rgb(216, 216, 216);
+  transition: 0.3s;
+}
+.japanese:hover{
+  background-color: rgba(245, 177, 236, 0.726);
+  transition: 0.3s;
+  .subjects{
+    text-shadow: 0 0 5px red;
+  }
+}
+.english{
+  width: 50%;
+  list-style: none;
+  background-color: rgb(167, 167, 250);
+  margin: 0 auto;
+  padding: 1.5% 10%;
+  border: 1px solid rgb(216, 216, 216);
+  transition: 0.3s;
+}
+.english:hover{
+  background-color: rgba(203, 253, 255, 0.726);
+  transition: 0.3s;
+  .subjects{
+    text-shadow: 0 0 5px rgb(0, 132, 255);
+  }
+}
+// トップページ下部課題一覧

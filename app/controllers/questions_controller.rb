@@ -6,6 +6,7 @@ class QuestionsController < ApplicationController
 
   def index
     @results = @p.result
+    @questions = Question.all
   end
 
   def new

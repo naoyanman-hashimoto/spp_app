@@ -110,6 +110,16 @@ body{
 	.service-explain {
 		font-size: 2vh;
 	}
+	/* トップページ下部課題一覧 */
+	.math{
+		padding: 1.5% 7%;
+	}
+	.japanese{
+		padding: 1.5% 7%;
+	}
+	.english{
+		padding: 1.5% 7%;
+	}
 	/* マイページ部 */
 	.table{
 		width: 40%;
@@ -153,6 +163,25 @@ body{
 	.dummy{
 		width: 120px;
 		font-size: 12px;
+	}
+	/* トップページ下部課題一覧 */
+	.subjects{
+		font-size: 1.2rem;
+	}
+	.question-num{
+		font-size: 0.8rem;
+	}
+	.top-page-question-name{
+		font-size: 0.8rem;
+	}
+	.math{
+		padding: 1.5% 4%;
+	}
+	.japanese{
+		padding: 1.5% 4%;
+	}
+	.english{
+		padding: 1.5% 4%;
 	}
 	/* マイページ部 */
 	.table{
@@ -217,8 +246,33 @@ body{
 		font-size: 12px;
 	}
 	/* ネオン文字部 */
-	.neon{
-		font-size: 10px;
+	.YDK1{
+		font-size: 1.5rem;
+	}
+	.YDK2{
+		font-size: 1.5rem;
+	}
+	.YDK3{
+		font-size: 1.5rem;
+	}
+	.YDK4{
+		font-size: 1.5rem;
+	}
+	.YDK5{
+		font-size: 1.5rem;
+	}
+	/* トップページ下部課題一覧 */
+	.math{
+		width: 90%;
+		padding: 1.5% 5%;
+	}
+	.japanese{
+		width: 90%;
+		padding: 1.5% 5%;
+	}
+	.english{
+		width: 90%;
+		padding: 1.5% 5%;
 	}
 	/* 新規登録ページ */
 	.registrations-new-page{
