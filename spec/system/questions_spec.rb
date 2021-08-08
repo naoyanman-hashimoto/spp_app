@@ -181,7 +181,7 @@ RSpec.describe '課題削除', type: :system do
     @question2 = FactoryBot.create(:question, user_id: @user2.id)
     sleep 0.1
   end
-  context '課題編集ができるとき' do
+  context '課題削除ができるとき' do
     it 'ログインしたユーザーは自分が作成した課題の編集ができる' do
       # 課題1を作成したユーザーでログインする
       visit root_path
@@ -248,6 +248,73 @@ RSpec.describe '課題削除', type: :system do
       expect(page).to have_no_link('削除', href: question_path(@question2))
     end
     it '既に回答者のいる問題は削除できない' do
+      # 課題1を作成したユーザーでログインする
+      visit root_path
+      expect(page).to have_content('ログイン')
+      visit new_user_session_path
+      fill_in 'user_email',    with: @user1.email
+      fill_in 'user_password', with: @user1.password
+      find('input[name="commit"]').click
+      # トップページへ遷移する事を確認する
+      expect(current_path).to eq(root_path)
+      # 課題選択ページに移動する
+      select 'さんすう', from: 'q_genre_id_eq'
+      find('input[value="もんだいをえらぶ"]').click
+      # 課題選択ページへ遷移した事を確認する
+      expect(page).to have_content('のもんだいページです')
+      # この時点で課題1には「削除」へのリンクがある事を確認する
+      expect(page).to have_link('削除', href: question_path(@question1))
+      # ログアウトする
+      find_link('ログアウト',href: destroy_user_session_path).click
+      # トップページへ遷移した事を確認する
+      expect(current_path).to eq(root_path)
+      # 課題1を作成していないユーザーでログインする
+      expect(page).to have_content('ログイン')
+      visit new_user_session_path
+      fill_in 'user_email',    with: @user2.email
+      fill_in 'user_password', with: @user2.password
+      find('input[name="commit"]').click
+      # トップページへ遷移する事を確認する
+      expect(current_path).to eq(root_path)
+      # 課題選択ページに移動する
+      select 'さんすう', from: 'q_genre_id_eq'
+      find('input[value="もんだいをえらぶ"]').click
+      # 課題選択ページへ遷移した事を確認する
+      expect(page).to have_content('のもんだいページです')
+      # 課題1を選択する
+      find_link(@question1.question_name, href: new_question_answer_path(@question1)).click
+      # 課題回答ページに遷移した事を確認する
+      expect(current_path).to eq(new_question_answer_path(@question1))
+      # 回答を入力する
+      @answer = FactoryBot.create(:answer, user_id: @user2.id, question_id: @question1.id)
+      fill_in 'answer_answer_content', with: @answer.answer_content
+      # 回答する
+      find('input[name="commit"]').click
+      # 回答完了ページに遷移した事を確認する
+      expect(current_path).to eq(question_answer_scores_path(@question1, @answer.id+1))
+      # 「こたえあわせをする」のリンクがある事を確認する
+      expect(page).to have_link('こたえあわせをする', href: new_question_answer_score_path(@question1, @answer.id+1))
+      # トップページに遷移する
+      visit root_path
+      # ログアウトする
+      find_link('ログアウト',href: destroy_user_session_path).click
+      # 課題1を作成したユーザーでログインする
+      expect(page).to have_content('ログイン')
+      visit new_user_session_path
+      fill_in 'user_email',    with: @user1.email
+      fill_in 'user_password', with: @user1.password
+      find('input[name="commit"]').click
+      # トップページへ遷移する事を確認する
+      expect(current_path).to eq(root_path)
+      # 課題選択ページに移動する
+      select 'さんすう', from: 'q_genre_id_eq'
+      find('input[value="もんだいをえらぶ"]').click
+      # 課題選択ページへ遷移した事を確認する
+      expect(page).to have_content('のもんだいページです')
+      # 課題1に「削除」へのリンクが無くなっている事を確認する
+      expect(page).to have_no_link('削除', href: question_path(@question1))
+      # 「すでに解答者がいる為、削除はできません」の文字が表示されている事を確認する
+      expect(page).to have_content('すでに解答者がいる為、削除はできません')
     end
   end
 end
