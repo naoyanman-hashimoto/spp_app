@@ -50,7 +50,6 @@ RSpec.describe "解答採点", type: :system do
       expect(current_path).to eq(new_question_answer_score_path(@question1, @answer.id+1))
       # 採点結果を入力する
       fill_in 'score_score', with: 10
-      binding.pry
       # 採点完了するとScoreモデルのカウントが1上がる事を確認する
       expect{
         find('input[name="commit"]').click
