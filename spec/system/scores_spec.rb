@@ -22,12 +22,7 @@ RSpec.describe "解答採点", type: :system do
     it 'ログインしたユーザーは課題回答後、採点する事ができる' do
       # ユーザー2でログインする
       basic_pass
-      visit root_path
-      expect(page).to have_content('ログイン')
-      visit new_user_session_path
-      fill_in 'user_email',    with: @user2.email
-      fill_in 'user_password', with: @user2.password
-      find('input[name="commit"]').click
+      sign_in(@user2)
       # トップページに遷移する事を確認する
       expect(current_path).to eq(root_path)
       # トップページ下部に課題1へのリンクがある事を確認する

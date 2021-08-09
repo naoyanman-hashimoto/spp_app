@@ -20,12 +20,7 @@ RSpec.describe "課題解答", type: :system do
     it 'ログインしたユーザーは課題選択ページから課題解答できる' do
       # ユーザー2でログインする
       basic_pass
-      visit root_path
-      expect(page).to have_content('ログイン')
-      visit new_user_session_path
-      fill_in 'user_email',    with: @user2.email
-      fill_in 'user_password', with: @user2.password
-      find('input[name="commit"]').click
+      sign_in(@user2)
       # トップページに遷移する事を確認する
       expect(current_path).to eq(root_path)
       # 課題選択ページに移動する
@@ -48,12 +43,7 @@ RSpec.describe "課題解答", type: :system do
     end
     it 'ログインしたユーザーはトップページから課題解答できる' do
       # ユーザー2でログインする
-      visit root_path
-      expect(page).to have_content('ログイン')
-      visit new_user_session_path
-      fill_in 'user_email',    with: @user2.email
-      fill_in 'user_password', with: @user2.password
-      find('input[name="commit"]').click
+      sign_in(@user2)
       # トップページに遷移する事を確認する
       expect(current_path).to eq(root_path)
       # トップページ下部に課題1へのリンクがある事を確認する
@@ -75,12 +65,7 @@ RSpec.describe "課題解答", type: :system do
   context '課題解答できないとき' do
     it 'ログインしたユーザーは自分が作成した課題には解答できずにトップページに遷移する' do
       # ユーザー1でログインする
-      visit root_path
-      expect(page).to have_content('ログイン')
-      visit new_user_session_path
-      fill_in 'user_email',    with: @user1.email
-      fill_in 'user_password', with: @user1.password
-      find('input[name="commit"]').click
+      sign_in(@user1)
       # トップページに遷移する事を確認する
       expect(current_path).to eq(root_path)
       # 課題選択ページに移動する

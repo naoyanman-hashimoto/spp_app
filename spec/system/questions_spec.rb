@@ -16,12 +16,7 @@ RSpec.describe '課題作成', type: :system do
     it 'ログインしたユーザーは課題作成できる' do
       # ログインする
       basic_pass
-      visit root_path
-      expect(page).to have_content('ログイン')
-      visit new_user_session_path
-      fill_in 'user_email', with: @user.email
-      fill_in 'user_password', with: @user.password
-      find('input[name="commit"]').click
+      sign_in(@user)
       # トップページへ遷移する事を確認する
       expect(current_path).to eq(root_path)
       # 課題作成ページへのボタンがあることを確認する
@@ -75,12 +70,7 @@ RSpec.describe '課題編集', type: :system do
   context '課題編集ができるとき' do
     it 'ログインしたユーザーは自分が作成した課題の編集ができる' do
       # 課題1を作成したユーザーでログインする
-      visit root_path
-      expect(page).to have_content('ログイン')
-      visit new_user_session_path
-      fill_in 'user_email',    with: @user1.email
-      fill_in 'user_password', with: @user1.password
-      find('input[name="commit"]').click
+      sign_in(@user1)
       # トップページへ遷移する事を確認する
       expect(current_path).to eq(root_path)
       # 課題選択ページに移動する
@@ -141,12 +131,7 @@ RSpec.describe '課題編集', type: :system do
   context '課題編集ができないとき' do
     it 'ログインしたユーザーは自分以外が作成した課題の編集画面には遷移できない' do
       # 課題1を作成したユーザーでログインする
-      visit root_path
-      expect(page).to have_content('ログイン')
-      visit new_user_session_path
-      fill_in 'user_email',    with: @user1.email
-      fill_in 'user_password', with: @user1.password
-      find('input[name="commit"]').click
+      sign_in(@user1)
       # トップページへ遷移する事を確認する
       expect(current_path).to eq(root_path)
       # 課題選択ページへ移動する
@@ -184,12 +169,7 @@ RSpec.describe '課題削除', type: :system do
   context '課題削除ができるとき' do
     it 'ログインしたユーザーは自分が作成した課題の編集ができる' do
       # 課題1を作成したユーザーでログインする
-      visit root_path
-      expect(page).to have_content('ログイン')
-      visit new_user_session_path
-      fill_in 'user_email',    with: @user1.email
-      fill_in 'user_password', with: @user1.password
-      find('input[name="commit"]').click
+      sign_in(@user1)
       # トップページへ遷移する事を確認する
       expect(current_path).to eq(root_path)
       # 課題選択ページに移動する
@@ -217,12 +197,7 @@ RSpec.describe '課題削除', type: :system do
   context '課題削除できないとき' do
     it 'ログインしたユーザーは自分以外が作成した課題の削除ができない' do
       # 課題1を作成したユーザーでログインする
-      visit root_path
-      expect(page).to have_content('ログイン')
-      visit new_user_session_path
-      fill_in 'user_email',    with: @user1.email
-      fill_in 'user_password', with: @user1.password
-      find('input[name="commit"]').click
+      sign_in(@user1)
       # トップページへ遷移する事を確認する
       expect(current_path).to eq(root_path)
       # 課題選択ページに移動する
@@ -249,12 +224,7 @@ RSpec.describe '課題削除', type: :system do
     end
     it '既に回答者のいる問題は削除できない' do
       # 課題1を作成したユーザーでログインする
-      visit root_path
-      expect(page).to have_content('ログイン')
-      visit new_user_session_path
-      fill_in 'user_email',    with: @user1.email
-      fill_in 'user_password', with: @user1.password
-      find('input[name="commit"]').click
+      sign_in(@user1)
       # トップページへ遷移する事を確認する
       expect(current_path).to eq(root_path)
       # 課題選択ページに移動する
@@ -269,11 +239,7 @@ RSpec.describe '課題削除', type: :system do
       # トップページへ遷移した事を確認する
       expect(current_path).to eq(root_path)
       # 課題1を作成していないユーザーでログインする
-      expect(page).to have_content('ログイン')
-      visit new_user_session_path
-      fill_in 'user_email',    with: @user2.email
-      fill_in 'user_password', with: @user2.password
-      find('input[name="commit"]').click
+      sign_in(@user2)
       # トップページへ遷移する事を確認する
       expect(current_path).to eq(root_path)
       # 課題選択ページに移動する
@@ -299,11 +265,7 @@ RSpec.describe '課題削除', type: :system do
       # ログアウトする
       find_link('ログアウト',href: destroy_user_session_path).click
       # 課題1を作成したユーザーでログインする
-      expect(page).to have_content('ログイン')
-      visit new_user_session_path
-      fill_in 'user_email',    with: @user1.email
-      fill_in 'user_password', with: @user1.password
-      find('input[name="commit"]').click
+      sign_in(@user1)
       # トップページへ遷移する事を確認する
       expect(current_path).to eq(root_path)
       # 課題選択ページに移動する
