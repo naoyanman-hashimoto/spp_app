@@ -48,7 +48,7 @@ https://spp-app-35965.herokuapp.com/
 - Pass:2222
 
 # テスト用アカウント
-- Eメール : test1@test.com
+- Eメール : test2@test.com
 - パスワード : 111111
 
 # 動作確認方法
